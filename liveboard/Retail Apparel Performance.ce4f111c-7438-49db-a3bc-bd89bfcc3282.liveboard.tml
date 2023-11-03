@@ -1,0 +1,345 @@
+guid: ce4f111c-7438-49db-a3bc-bd89bfcc3282
+liveboard:
+  name: Retail Apparel Performance
+  visualizations:
+  - id: Viz_1
+    answer:
+      name: Total Sales by Month and Product Type
+      tables:
+      - id: Online Apparel
+        name: Online Apparel
+        fqn: 30088711-b8da-4c31-9ac3-a8f5ea03365b
+      search_query: "[Sales] [Date].monthly [Product Type]"
+      answer_columns:
+      - name: Total Sales
+      - name: Month(Date)
+      - name: Product Type
+      table:
+        table_columns:
+        - column_id: Month(Date)
+          show_headline: false
+        - column_id: Product Type
+          show_headline: false
+        - column_id: Total Sales
+          show_headline: false
+        ordered_column_ids:
+        - Month(Date)
+        - Product Type
+        - Total Sales
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: LINE
+        chart_columns:
+        - column_id: Month(Date)
+        - column_id: Product Type
+        - column_id: Total Sales
+        axis_configs:
+        - x:
+          - Month(Date)
+          "y":
+          - Total Sales
+          color:
+          - Product Type
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"812fd16e-b321-4c3a-9055-e0ef9bf905ab\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Sales\"],\"isOpposite\": false}},{\"id\": \"5e6d99b0-a01c-491f-a50d-c1bc04973326\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Month(Date)\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Total Sales\",\"color\": \"#48D1E0\"},{\"serieName\": \"bags\",\"color\": \"#2E75F0\"},{\"serieName\": \"dresses\",\"color\": \"#48D1E0\"},{\"serieName\": \"headwear\",\"color\": \"#FCC838\"},{\"serieName\": \"jackets\",\"color\": \"#06BF7F\"},{\"serieName\": \"jeans\",\"color\": \"#8c62f5\"},{\"serieName\": \"pants\",\"color\": \"#FF8142\"},{\"serieName\": \"shirts\",\"color\": \"#ABC7F9\"},{\"serieName\": \"shorts\",\"color\": \"#B5ECF2\"},{\"serieName\": \"skirts\",\"color\": \"#FDE9AF\"},{\"serieName\": \"socks\",\"color\": \"#9BE5CB\"},{\"serieName\": \"sweaters\",\"color\": \"#baa1f9\"},{\"serieName\": \"sweatshirts\",\"color\": \"#FFCCB3\"},{\"serieName\": \"swimwear\",\"color\": \"#2359B6\"},{\"serieName\": \"underwear\",\"color\": \"#369FAA\"},{\"serieName\": \"vests\",\"color\": \"#BF982A\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: 6932861e-2e8e-46e3-ba9c-c49a4be21b24
+  - id: Viz_2
+    answer:
+      name: Total Quantity Purchased by State
+      tables:
+      - id: Online Apparel
+        name: Online Apparel
+        fqn: 30088711-b8da-4c31-9ac3-a8f5ea03365b
+      search_query: "[Quantity Purchased] [State]"
+      answer_columns:
+      - name: Total Quantity Purchased
+      - name: State
+      table:
+        table_columns:
+        - column_id: State
+          show_headline: false
+        - column_id: Total Quantity Purchased
+          show_headline: false
+        ordered_column_ids:
+        - State
+        - Total Quantity Purchased
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: GEO_AREA
+        chart_columns:
+        - column_id: State
+        - column_id: Total Quantity Purchased
+        axis_configs:
+        - x:
+          - State
+          "y":
+          - Total Quantity Purchased
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"0dd2b4bb-8040-46f6-ace1-9e996bd331a9\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Quantity Purchased\"],\"isOpposite\": false}},{\"id\": \"638dba03-bc02-4031-add0-54f093f48690\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"State\"]}}],\"systemSeriesColors\": [{\"serieName\": \"fd1763f4-9755-462c-9b60-dc17d52a9780\",\"color\": \"#48D1E0\"},{\"serieName\": \"bags\",\"color\": \"#2E75F0\"},{\"serieName\": \"dresses\",\"color\": \"#48D1E0\"},{\"serieName\": \"headwear\",\"color\": \"#FCC838\"},{\"serieName\": \"jackets\",\"color\": \"#06BF7F\"},{\"serieName\": \"jeans\",\"color\": \"#8c62f5\"},{\"serieName\": \"pants\",\"color\": \"#FF8142\"},{\"serieName\": \"shirts\",\"color\": \"#ABC7F9\"},{\"serieName\": \"shorts\",\"color\": \"#B5ECF2\"},{\"serieName\": \"skirts\",\"color\": \"#FDE9AF\"},{\"serieName\": \"socks\",\"color\": \"#9BE5CB\"},{\"serieName\": \"sweaters\",\"color\": \"#baa1f9\"},{\"serieName\": \"sweatshirts\",\"color\": \"#FFCCB3\"},{\"serieName\": \"swimwear\",\"color\": \"#2359B6\"},{\"serieName\": \"underwear\",\"color\": \"#369FAA\"},{\"serieName\": \"vests\",\"color\": \"#BF982A\"}],\"systemMultiColorSeriesColors\": [{\"serieName\": \"Total Quantity Purchased\",\"colorMap\": [{\"serieName\": \"State\",\"color\": [\"#ffffb2\",\"#fddd87\",\"#fba35d\",\"#f75534\",\"#f9140a\",\"#d70315\",\"#b10026\"]}]}]}"
+      display_mode: CHART_MODE
+    viz_guid: 2bbb5602-bb45-4397-bc25-e399df7d32d0
+  - id: Viz_3
+    answer:
+      name: Top 10 Purchased Products
+      tables:
+      - id: Online Apparel
+        name: Online Apparel
+        fqn: 30088711-b8da-4c31-9ac3-a8f5ea03365b
+      search_query: "[Quantity Purchased] [Product] top 10"
+      answer_columns:
+      - name: Total Quantity Purchased
+      - name: Product
+      table:
+        table_columns:
+        - column_id: Product
+          show_headline: false
+        - column_id: Total Quantity Purchased
+          show_headline: false
+        ordered_column_ids:
+        - Product
+        - Total Quantity Purchased
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: BAR
+        chart_columns:
+        - column_id: Product
+        - column_id: Total Quantity Purchased
+        axis_configs:
+        - x:
+          - Product
+          "y":
+          - Total Quantity Purchased
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"405320d7-b4c2-4102-81d8-9765c251082f\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Quantity Purchased\"],\"isOpposite\": false}},{\"id\": \"c2e0ce7d-4d9d-4255-9eff-42a9b5b27064\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Product\"]}}],\"systemSeriesColors\": [{\"serieName\": \"fd1763f4-9755-462c-9b60-dc17d52a9780\",\"color\": \"#48D1E0\"},{\"serieName\": \"bags\",\"color\": \"#2E75F0\"},{\"serieName\": \"dresses\",\"color\": \"#48D1E0\"},{\"serieName\": \"headwear\",\"color\": \"#FCC838\"},{\"serieName\": \"jackets\",\"color\": \"#06BF7F\"},{\"serieName\": \"jeans\",\"color\": \"#8c62f5\"},{\"serieName\": \"pants\",\"color\": \"#FF8142\"},{\"serieName\": \"shirts\",\"color\": \"#ABC7F9\"},{\"serieName\": \"shorts\",\"color\": \"#B5ECF2\"},{\"serieName\": \"skirts\",\"color\": \"#FDE9AF\"},{\"serieName\": \"socks\",\"color\": \"#9BE5CB\"},{\"serieName\": \"sweaters\",\"color\": \"#baa1f9\"},{\"serieName\": \"sweatshirts\",\"color\": \"#FFCCB3\"},{\"serieName\": \"swimwear\",\"color\": \"#2359B6\"},{\"serieName\": \"underwear\",\"color\": \"#369FAA\"},{\"serieName\": \"vests\",\"color\": \"#BF982A\"},{\"serieName\": \"Total Quantity Purchased\",\"color\": \"#06BF7F\"}],\"systemMultiColorSeriesColors\": [{\"serieName\": \"Total Quantity Purchased\",\"colorMap\": [{\"serieName\": \"85858c48-1e09-4f79-a467-b3fdd25ff338\",\"color\": [\"#ffffb2\",\"#fddd87\",\"#fba35d\",\"#f75534\",\"#f9140a\",\"#d70315\",\"#b10026\"]}]}]}"
+      display_mode: CHART_MODE
+    viz_guid: 5d3d7825-81c6-47b2-9dbd-ffaac6951a32
+    action_object_associations:
+    - action_name: Send to CRM
+      context: CONTEXT_MENU
+      enabled: true
+  - id: Viz_4
+    answer:
+      name: Sales by State - Last 3 Months
+      tables:
+      - id: Retail Sales
+        name: Retail Sales
+        fqn: 3fe3cf49-2726-41a7-a51a-bc9728d8a24f
+      search_query: "[Store State] [Sales] [Date].'last 3 months' [Age Group].18-24 [Age Group].25-34 [Age Group].35-44 [Age Group].45-54 [Age Group].55-64 [Age Group].65+ [Store Region].southwest [Store Region].west [Category].food [Category].non-food"
+      answer_columns:
+      - name: Store State
+      - name: Total Sales
+      table:
+        table_columns:
+        - column_id: Store State
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Total Sales
+          headline_aggregation: SUM
+        ordered_column_ids:
+        - Store State
+        - Total Sales
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\",\"wrapTableHeader\": true,\"columnProperties\": [{\"columnId\": \"Store State\",\"columnProperty\": {}},{\"columnId\": \"Total Sales\",\"columnProperty\": {}}]}"
+      chart:
+        type: PIE
+        chart_columns:
+        - column_id: Store State
+        - column_id: Total Sales
+        axis_configs:
+        - x:
+          - Store State
+          "y":
+          - Total Sales
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"gridLines\": {},\"responsiveLayoutPreference\": \"USER_PREFERRED_ON\",\"chartSpecific\": {}},\"columnProperties\": [{\"columnId\": \"Store State\",\"columnProperty\": {\"dataLabels\": true}},{\"columnId\": \"Total Sales\",\"columnProperty\": {\"dataLabels\": true}}],\"axisProperties\": [{\"id\": \"d04bbe90-ffb5-4e3c-bc28-bb9a83b16721\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Sales\"],\"isOpposite\": false}},{\"id\": \"80fe2810-cd63-449a-81bd-32fd81563c0f\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Store State\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Total Sales\",\"color\": \"#FCC838\"},{\"serieName\": \"arizona\",\"color\": \"#F47E89\"},{\"serieName\": \"california\",\"color\": \"#B6313E\"},{\"serieName\": \"colorado\",\"color\": \"#F9B3B9\"},{\"serieName\": \"nevada\",\"color\": \"#F04152\"},{\"serieName\": \"new mexico\",\"color\": \"#A2ACBA\"},{\"serieName\": \"oklahoma\",\"color\": \"#47515F\"},{\"serieName\": \"oregon\",\"color\": \"#BEC6D0\"},{\"serieName\": \"texas\",\"color\": \"#747E8C\"},{\"serieName\": \"washington\",\"color\": \"#FFA97E\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: ca9dbd97-4bea-4c70-955a-9042c8fbf0db
+  - id: Viz_5
+    answer:
+      name: Total Sales by Weekly Date
+      tables:
+      - id: Online Apparel
+        name: Online Apparel
+        fqn: 30088711-b8da-4c31-9ac3-a8f5ea03365b
+      search_query: "[Sales] [Date].weekly [Date].'last 6 months'"
+      answer_columns:
+      - name: Total Sales
+      - name: Week(Date)
+      table:
+        table_columns:
+        - column_id: Week(Date)
+          show_headline: false
+        - column_id: Total Sales
+          show_headline: false
+        ordered_column_ids:
+        - Week(Date)
+        - Total Sales
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: KPI
+        chart_columns:
+        - column_id: Week(Date)
+        - column_id: Total Sales
+        axis_configs:
+        - x:
+          - Week(Date)
+          "y":
+          - Total Sales
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {\"pivotState\": {\"fields\": [{\"dataField\": \"Week(Date)\",\"sortBy\": \"value\",\"sortBySummaryField\": \"Week(Date)\",\"sortOrder\": \"asc\",\"expanded\": false,\"area\": \"row\"}]},\"customProps\": \"{\\\"showLabel\\\":true,\\\"showComparison\\\":true,\\\"showSparkline\\\":true,\\\"showAnomalies\\\":true,\\\"showOnlyLatestAnomaly\\\":false,\\\"showBounds\\\":true,\\\"customCompare\\\":\\\"5\\\"}\"}},\"axisProperties\": [{\"id\": \"3b58c166-a5ef-442e-b9c1-553897d0038f\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Sales\"],\"isOpposite\": false}},{\"id\": \"fb0d712a-15b0-4aef-9474-aafbfb8e2dbd\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Week(Date)\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Total Sales\",\"color\": \"#2770ef\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: f3df02b4-b4a5-46bc-88c8-e85320369acb
+  - id: Viz_6
+    answer:
+      name: Total Quantity Purchased by Weekly Date
+      tables:
+      - id: Online Apparel
+        name: Online Apparel
+        fqn: 30088711-b8da-4c31-9ac3-a8f5ea03365b
+      search_query: "[Date].weekly [Date].'last 6 months' [Quantity Purchased]"
+      answer_columns:
+      - name: Week(Date)
+      - name: Total Quantity Purchased
+      table:
+        table_columns:
+        - column_id: Week(Date)
+          show_headline: false
+        - column_id: Total Quantity Purchased
+          show_headline: false
+        ordered_column_ids:
+        - Week(Date)
+        - Total Quantity Purchased
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: KPI
+        chart_columns:
+        - column_id: Week(Date)
+        - column_id: Total Quantity Purchased
+        axis_configs:
+        - x:
+          - Week(Date)
+          "y":
+          - Total Quantity Purchased
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"5c734c55-81d1-45dc-9af4-80e15eef2129\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Quantity Purchased\"],\"isOpposite\": false}},{\"id\": \"27e00e11-ca59-49ca-9fdd-4162801a407c\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Week(Date)\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Total Quantity Purchased\",\"color\": \"#2770ef\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: 080c646b-d5c8-4a9e-aa5c-a6a660c990bb
+  - id: Viz_7
+    answer:
+      name: "Total Sales by Product Type, Warehouse"
+      tables:
+      - id: Online Apparel
+        name: Online Apparel
+        fqn: 30088711-b8da-4c31-9ac3-a8f5ea03365b
+      search_query: "[Sales] [Warehouse] [Product Type]"
+      answer_columns:
+      - name: Total Sales
+      - name: Warehouse
+      - name: Product Type
+      table:
+        table_columns:
+        - column_id: Warehouse
+          show_headline: false
+        - column_id: Product Type
+          show_headline: false
+        - column_id: Total Sales
+          show_headline: false
+        ordered_column_ids:
+        - Warehouse
+        - Product Type
+        - Total Sales
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: SANKEY
+        chart_columns:
+        - column_id: Warehouse
+        - column_id: Product Type
+        - column_id: Total Sales
+        axis_configs:
+        - x:
+          - Product Type
+          - Warehouse
+          "y":
+          - Total Sales
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"e1af31b8-4028-418d-8aa4-39ec3f67c993\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Sales\"],\"isOpposite\": false}},{\"id\": \"a1ab08f5-28cc-42f3-8c13-483bb5769619\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Product Type\",\"Warehouse\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Total Sales\",\"color\": \"#FF8142\"},{\"serieName\": \"bags\",\"color\": \"#704ec4\"},{\"serieName\": \"dresses\",\"color\": \"#a381f7\"},{\"serieName\": \"headwear\",\"color\": \"#8c62f5\"},{\"serieName\": \"jackets\",\"color\": \"#049160\"},{\"serieName\": \"jeans\",\"color\": \"#56D3A8\"},{\"serieName\": \"pants\",\"color\": \"#06BF7F\"},{\"serieName\": \"shirts\",\"color\": \"#BF982A\"},{\"serieName\": \"shorts\",\"color\": \"#FCD977\"},{\"serieName\": \"skirts\",\"color\": \"#FCC838\"},{\"serieName\": \"socks\",\"color\": \"#369FAA\"},{\"serieName\": \"sweaters\",\"color\": \"#82DFE9\"},{\"serieName\": \"sweatshirts\",\"color\": \"#48D1E0\"},{\"serieName\": \"swimwear\",\"color\": \"#2359B6\"},{\"serieName\": \"underwear\",\"color\": \"#71A1F4\"},{\"serieName\": \"vests\",\"color\": \"#2E75F0\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: 3348fd0d-a2b5-42c4-ad91-14046f771f62
+  - id: Viz_8
+    viz_guid: 6792b8dc-4b47-4d23-a051-e3dbd8a0fbcd
+    note_tile:
+      html_parsed_string: <p class="theme-module__editor-paragraph" dir="ltr"><span>Adding note</span></p>
+  filters:
+  - column:
+    - Online Apparel::Warehouse
+    oper: in
+    values:
+    - nevada - warehouse (89502)
+    - north carolina - warehouse (28134)
+    excluded_visualizations:
+    - Viz_5
+    - Viz_6
+    - Viz_1
+    - Viz_3
+    - Viz_2
+    is_mandatory: false
+    is_single_value: false
+    display_name: Retail Warehouse
+  - column:
+    - Online Apparel::Product Type
+    is_mandatory: false
+    is_single_value: false
+    display_name: ""
+  - column:
+    - Online Apparel::Channel
+    is_mandatory: false
+    is_single_value: false
+    display_name: ""
+  layout:
+    tiles:
+    - visualization_id: Viz_1
+      x: 0
+      "y": 4
+      height: 10
+      width: 6
+    - visualization_id: Viz_7
+      x: 6
+      "y": 0
+      height: 7
+      width: 6
+    - visualization_id: Viz_2
+      x: 0
+      "y": 14
+      height: 6
+      width: 12
+    - visualization_id: Viz_6
+      x: 3
+      "y": 0
+      height: 4
+      width: 3
+    - visualization_id: Viz_5
+      x: 0
+      "y": 0
+      height: 4
+      width: 3
+    - visualization_id: Viz_3
+      x: 6
+      "y": 7
+      height: 7
+      width: 3
+    - visualization_id: Viz_4
+      x: 9
+      "y": 7
+      height: 7
+      width: 3
+    - visualization_id: Viz_8
+      x: 0
+      "y": 20
+      height: 4
+      width: 3
