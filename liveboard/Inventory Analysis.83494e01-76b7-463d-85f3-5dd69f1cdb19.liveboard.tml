@@ -1,0 +1,1591 @@
+guid: 83494e01-76b7-463d-85f3-5dd69f1cdb19
+liveboard:
+  name: Inventory Analysis
+  description: New sales liveboard
+  visualizations:
+  - id: Viz_1
+    answer:
+      name: Total Sales by Animal by Category
+      tables:
+      - id: PetSpot
+        name: PetSpot
+        fqn: 4a3b455b-9542-47a4-9f02-6baac10149e6
+      search_query: "[Sales] by [Animal] by [Category]"
+      answer_columns:
+      - name: Total Sales
+      - name: Animal
+      - name: Category
+      table:
+        table_columns:
+        - column_id: Animal
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Category
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Total Sales
+          headline_aggregation: SUM
+        ordered_column_ids:
+        - Animal
+        - Category
+        - Total Sales
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\",\"wrapTableHeader\": true}"
+      chart:
+        type: STACKED_COLUMN
+        chart_columns:
+        - column_id: Animal
+        - column_id: Category
+        - column_id: Total Sales
+        axis_configs:
+        - x:
+          - Animal
+          "y":
+          - Total Sales
+          color:
+          - Category
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"gridLines\": {\"xGridlineEnabled\": true,\"yGridlineEnabled\": true},\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {\"isStackedAsPercent\": false,\"stackedAsPercentFormat\": {\"category\": \"PERCENTAGE\",\"percentageFormatConfig\": {\"decimals\": 2.0,\"removeTrailingZeroes\": false},\"isCategoryEditable\": false}},\"showStackedLabels\": false,\"allLabels\": false},\"columnProperties\": [{\"columnId\": \"Total Sales\",\"columnProperty\": {\"dataLabels\": false}}],\"axisProperties\": [{\"id\": \"368b60ea-f445-47f3-b5d8-371a8b9e34b8\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Sales\"],\"isOpposite\": false}},{\"id\": \"b59858ae-c2e1-4246-9a3e-d7388e53a9b3\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Animal\"]}}],\"systemSeriesColors\": [{\"serieName\": \"birds\",\"color\": \"#06BF7F\"},{\"serieName\": \"cats\",\"color\": \"#FCC838\"},{\"serieName\": \"dogs\",\"color\": \"#82DFE9\"},{\"serieName\": \"fish & aquatic pets\",\"color\": \"#48D1E0\"},{\"serieName\": \"reptiles & amphibians\",\"color\": \"#71A1F4\"},{\"serieName\": \"small animals\",\"color\": \"#2E75F0\"},{\"serieName\": \"Total Sales\",\"color\": \"#FF8142\"},{\"serieName\": \"apparel\",\"color\": \"#721F27\"},{\"serieName\": \"apparel & accessories\",\"color\": \"#F47E89\"},{\"serieName\": \"aquarium cleaners\",\"color\": \"#B6313E\"},{\"serieName\": \"aquarium dcor\",\"color\": \"#F9B3B9\"},{\"serieName\": \"aquarium heaters\",\"color\": \"#F04152\"},{\"serieName\": \"aquarium hoods\",\"color\": \"#2F3947\"},{\"serieName\": \"aquarium hydrometers\",\"color\": \"#A2ACBA\"},{\"serieName\": \"aquarium lights\",\"color\": \"#47515F\"},{\"serieName\": \"aquarium pumps & filters\",\"color\": \"#BEC6D0\"},{\"serieName\": \"aquarium stands\",\"color\": \"#747E8C\"},{\"serieName\": \"aquarium substrate\",\"color\": \"#7A3D1F\"},{\"serieName\": \"aquarium test kits\",\"color\": \"#FFA97E\"},{\"serieName\": \"aquarium thermometers\",\"color\": \"#C26232\"},{\"serieName\": \"aquarium water treatments\",\"color\": \"#FFCCB3\"},{\"serieName\": \"aquariums & fish bowls\",\"color\": \"#FF8142\"},{\"serieName\": \"automatic feeders\",\"color\": \"#422E75\"},{\"serieName\": \"beds & furniture\",\"color\": \"#B094F8\"},{\"serieName\": \"breeding tanks\",\"color\": \"#6A4ABA\"},{\"serieName\": \"cages\",\"color\": \"#D1C0FB\"},{\"serieName\": \"cages & accessories\",\"color\": \"#8C62F5\"},{\"serieName\": \"cameras & monitors\",\"color\": \"#025B3C\"},{\"serieName\": \"carriers\",\"color\": \"#56D3A8\"},{\"serieName\": \"carriers & strollers\",\"color\": \"#049160\"},{\"serieName\": \"carriers & travel products\",\"color\": \"#9BE5CB\"},{\"serieName\": \"cat doors, steps, nets & pens\",\"color\": \"#06BF7F\"},{\"serieName\": \"collars, harnesses & leashes\",\"color\": \"#785F1A\"},{\"serieName\": \"crates, houses & pens\",\"color\": \"#FCD977\"},{\"serieName\": \"doors, gates & ramps\",\"color\": \"#BF982A\"},{\"serieName\": \"exercise wheels\",\"color\": \"#FDE9AF\"},{\"serieName\": \"feeding & watering supplies\",\"color\": \"#FCC838\"},{\"serieName\": \"flea & tick control\",\"color\": \"#22636B\"},{\"serieName\": \"food\",\"color\": \"#82DFE9\"},{\"serieName\": \"grooming\",\"color\": \"#369FAA\"},{\"serieName\": \"habitat dcor\",\"color\": \"#B5ECF2\"},{\"serieName\": \"habitat lighting\",\"color\": \"#48D1E0\"},{\"serieName\": \"houses & habitats\",\"color\": \"#163772\"},{\"serieName\": \"litter & housebreaking\",\"color\": \"#71A1F4\"},{\"serieName\": \"memorials\",\"color\": \"#2359B6\"},{\"serieName\": \"odor & stain removers\",\"color\": \"#ABC7F9\"},{\"serieName\": \"repellents & training aids\",\"color\": \"#2E75F0\"},{\"serieName\": \"reptile houses\",\"color\": \"#721F27\"},{\"serieName\": \"terrarium bedding, sand & substrate\",\"color\": \"#F47E89\"},{\"serieName\": \"terrarium bowls\",\"color\": \"#B6313E\"},{\"serieName\": \"terrarium covers\",\"color\": \"#F9B3B9\"},{\"serieName\": \"terrarium heat lamps & mats\",\"color\": \"#F04152\"},{\"serieName\": \"terrarium hygrometers\",\"color\": \"#2F3947\"},{\"serieName\": \"terrarium thermometers\",\"color\": \"#A2ACBA\"},{\"serieName\": \"terrariums\",\"color\": \"#47515F\"},{\"serieName\": \"toys\",\"color\": \"#BEC6D0\"},{\"serieName\": \"training & behavior aids\",\"color\": \"#747E8C\"},{\"serieName\": \"treats\",\"color\": \"#7A3D1F\"},{\"serieName\": \"vitamins, supplements & health supplies\",\"color\": \"#FFA97E\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: 71e32cd9-1a95-4da1-9d9e-fbe72e75fc8d
+  - id: Viz_2
+    answer:
+      name: Month-Over-Month Sales Growth by Animal
+      tables:
+      - id: PetSpot
+        name: PetSpot
+        fqn: 4a3b455b-9542-47a4-9f02-6baac10149e6
+      search_query: "growth of [Sales] by [Date] [Date].monthly by [Animal] [Date].'last 2 quarters'"
+      answer_columns:
+      - name: Growth of Total Sales
+      - name: Animal
+      - name: Month(Date)
+      table:
+        table_columns:
+        - column_id: Animal
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Month(Date)
+          headline_aggregation: MIN-MAX
+        - column_id: Growth of Total Sales
+          headline_aggregation: MIN
+        ordered_column_ids:
+        - Animal
+        - Month(Date)
+        - Growth of Total Sales
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: COLUMN
+        chart_columns:
+        - column_id: Animal
+        - column_id: Month(Date)
+        - column_id: Growth of Total Sales
+        axis_configs:
+        - x:
+          - Month(Date)
+          "y":
+          - Growth of Total Sales
+          color:
+          - Animal
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"gridLines\": {\"xGridlineEnabled\": true,\"yGridlineEnabled\": true},\"responsiveLayoutPreference\": \"AUTO_ON\",\"showLinearRegressionLine\": true,\"chartSpecific\": {},\"showStackedLabels\": false,\"allLabels\": false},\"axisProperties\": [{\"id\": \"82c22223-24fa-4bd9-95a7-0ccf7f63015f\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Growth of Total Sales\"],\"isOpposite\": false}},{\"id\": \"241fd640-2a35-4ac8-9a83-fd50c86a5c49\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Month(Date)\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Growth of Total Sales\",\"color\": \"#FF8142\"},{\"serieName\": \"highcharts-regression\",\"color\": \"#FF8142\"},{\"serieName\": \"birds\",\"color\": \"#06BF7F\"},{\"serieName\": \"cats\",\"color\": \"#FCC838\"},{\"serieName\": \"dogs\",\"color\": \"#82DFE9\"},{\"serieName\": \"fish & aquatic pets\",\"color\": \"#48D1E0\"},{\"serieName\": \"reptiles & amphibians\",\"color\": \"#71A1F4\"},{\"serieName\": \"small animals\",\"color\": \"#2E75F0\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: 498349bc-fbd4-4747-852f-36ea6a014f52
+  - id: Viz_3
+    answer:
+      name: Total Monthly Sales by Animal
+      tables:
+      - id: PetSpot
+        name: PetSpot
+        fqn: 4a3b455b-9542-47a4-9f02-6baac10149e6
+      search_query: "[Sales] by [Animal] [Date].monthly"
+      answer_columns:
+      - name: Total Sales
+      - name: Animal
+      - name: Month(Date)
+      table:
+        table_columns:
+        - column_id: Animal
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Month(Date)
+          headline_aggregation: MIN-MAX
+        - column_id: Total Sales
+          headline_aggregation: SUM
+        ordered_column_ids:
+        - Animal
+        - Month(Date)
+        - Total Sales
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: STACKED_AREA
+        chart_columns:
+        - column_id: Animal
+        - column_id: Month(Date)
+        - column_id: Total Sales
+        axis_configs:
+        - x:
+          - Month(Date)
+          "y":
+          - Total Sales
+          color:
+          - Animal
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"gridLines\": {\"xGridlineEnabled\": true,\"yGridlineEnabled\": true},\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"040292c7-3c24-4450-94ca-0735b3743dc1\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Sales\"],\"isOpposite\": false}},{\"id\": \"3705f96d-63fd-47d0-8436-6408a58323bf\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Month(Date)\"]}}],\"systemSeriesColors\": [{\"serieName\": \"birds\",\"color\": \"#06BF7F\"},{\"serieName\": \"cats\",\"color\": \"#FCC838\"},{\"serieName\": \"dogs\",\"color\": \"#82DFE9\"},{\"serieName\": \"fish & aquatic pets\",\"color\": \"#48D1E0\"},{\"serieName\": \"reptiles & amphibians\",\"color\": \"#71A1F4\"},{\"serieName\": \"small animals\",\"color\": \"#2E75F0\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: 00ff444e-f788-4672-ac82-c776f0a86b06
+  - id: Viz_4
+    answer:
+      name: Total Sales by Category
+      tables:
+      - id: PetSpot
+        name: PetSpot
+        fqn: 4a3b455b-9542-47a4-9f02-6baac10149e6
+      search_query: "by [Category] top 10 [Sales] sort by [Sales] descending"
+      answer_columns:
+      - name: Category
+      - name: Total Sales
+      table:
+        table_columns:
+        - column_id: Category
+          show_headline: false
+        - column_id: Total Sales
+          show_headline: false
+        ordered_column_ids:
+        - Category
+        - Total Sales
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\",\"wrapTableHeader\": true}"
+      chart:
+        type: BAR
+        chart_columns:
+        - column_id: Category
+        - column_id: Total Sales
+        axis_configs:
+        - x:
+          - Category
+          "y":
+          - Total Sales
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {},\"showStackedLabels\": true,\"allLabels\": true},\"columnProperties\": [{\"columnId\": \"Category\",\"columnProperty\": {\"dataLabels\": true}},{\"columnId\": \"Total Sales\",\"columnProperty\": {\"dataLabels\": true}}],\"axisProperties\": [{\"id\": \"8e7badb1-e261-4fbf-9059-7b9ffb0cc361\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Sales\"],\"isOpposite\": false}},{\"id\": \"64e5d66c-c581-4c0b-ae0c-3076a3572594\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Category\"]}}],\"systemSeriesColors\": [{\"serieName\": \"ec5040c4-743e-4fe6-8262-a48cdb4a95a5\",\"color\": \"#FCC838\"},{\"serieName\": \"cats\",\"color\": \"#48D1E0\"},{\"serieName\": \"dogs\",\"color\": \"#2E75F0\"},{\"serieName\": \"beds & furniture\",\"color\": \"#56D3A8\"},{\"serieName\": \"collars, harnesses & leashes\",\"color\": \"#06BF7F\"},{\"serieName\": \"feeding & watering supplies\",\"color\": \"#FCD977\"},{\"serieName\": \"food\",\"color\": \"#FCC838\"},{\"serieName\": \"grooming\",\"color\": \"#82DFE9\"},{\"serieName\": \"litter & housebreaking\",\"color\": \"#48D1E0\"},{\"serieName\": \"toys\",\"color\": \"#71A1F4\"},{\"serieName\": \"treats\",\"color\": \"#2E75F0\"},{\"serieName\": \"birds\",\"color\": \"#06BF7F\"},{\"serieName\": \"fish & aquatic pets\",\"color\": \"#71A1F4\"},{\"serieName\": \"reptiles & amphibians\",\"color\": \"#06BF7F\"},{\"serieName\": \"small animals\",\"color\": \"#FCC838\"},{\"serieName\": \"Total Sales\",\"color\": \"#2E75F0\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: 024bb751-79ec-4a8e-a216-7449af11a72f
+  - id: Viz_5
+    answer:
+      name: Top 10 Products by Sales
+      tables:
+      - id: PetSpot
+        name: PetSpot
+        fqn: 4a3b455b-9542-47a4-9f02-6baac10149e6
+      search_query: "[Sales] by [Product] top 10"
+      answer_columns:
+      - name: Total Sales
+      - name: Product
+      table:
+        table_columns:
+        - column_id: Product
+          show_headline: false
+        - column_id: Total Sales
+          show_headline: false
+        ordered_column_ids:
+        - Product
+        - Total Sales
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: BAR
+        chart_columns:
+        - column_id: Product
+        - column_id: Total Sales
+        axis_configs:
+        - x:
+          - Product
+          "y":
+          - Total Sales
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"mapviewport\": {\"center\": [-1.110051276631109E7,4627377.673052579],\"zoomLevel\": 5.0},\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {},\"showStackedLabels\": true,\"allLabels\": true},\"columnProperties\": [{\"columnId\": \"Total Sales\",\"columnProperty\": {\"dataLabels\": true}}],\"axisProperties\": [{\"id\": \"2e59a9b3-cc1e-4f1f-9d35-9aa987b1b9ce\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Sales\"],\"isOpposite\": false}},{\"id\": \"f07f07f3-8db8-4ae7-9960-4ee25ecd3e42\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Product\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Total Sales\",\"color\": \"#2E75F0\"}],\"systemMultiColorSeriesColors\": [{\"serieName\": \"Total Sales\",\"colorMap\": [{\"serieName\": \"482e1341-7faf-4055-8144-626c48e4558c\",\"color\": [\"#ffffb2\",\"#fddd87\",\"#fba35d\",\"#f75534\",\"#f9140a\",\"#d70315\",\"#b10026\"]}]}]}"
+      display_mode: CHART_MODE
+    viz_guid: a73b08c2-eccb-4b7a-84ed-c8f403681118
+  - id: Viz_6
+    answer:
+      name: Monthly Sales
+      tables:
+      - id: PetSpot
+        name: PetSpot
+        fqn: 4a3b455b-9542-47a4-9f02-6baac10149e6
+      search_query: "[Sales] [Date].'this year' [Date].monthly"
+      answer_columns:
+      - name: Total Sales
+      - name: Month(Date)
+      table:
+        table_columns:
+        - column_id: Month(Date)
+          headline_aggregation: MIN-MAX
+        - column_id: Total Sales
+          headline_aggregation: SUM
+        ordered_column_ids:
+        - Month(Date)
+        - Total Sales
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: KPI
+        chart_columns:
+        - column_id: Month(Date)
+        - column_id: Total Sales
+        axis_configs:
+        - x:
+          - Month(Date)
+          "y":
+          - Total Sales
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"bde7be9a-85f4-4619-bac6-1b1fd60d64c5\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Sales\"],\"isOpposite\": false}},{\"id\": \"ed50266b-835c-4ded-87dd-d6c18bd020a3\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Month(Date)\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Total Sales\",\"color\": \"#2770ef\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: 408facd7-c801-4716-a081-da7745689f51
+  - id: Viz_7
+    answer:
+      name: Monthly Sales Growth
+      tables:
+      - id: PetSpot
+        name: PetSpot
+        fqn: 4a3b455b-9542-47a4-9f02-6baac10149e6
+      search_query: "growth of [Sales] by [Date] [Date].monthly [Date]"
+      answer_columns:
+      - name: Growth of Total Sales
+      - name: Week(Date)
+      table:
+        table_columns:
+        - column_id: Week(Date)
+          headline_aggregation: MIN-MAX
+        - column_id: Growth of Total Sales
+          headline_aggregation: MIN
+        ordered_column_ids:
+        - Week(Date)
+        - Growth of Total Sales
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: WATERFALL
+        chart_columns:
+        - column_id: Week(Date)
+        - column_id: Growth of Total Sales
+        axis_configs:
+        - x:
+          - Week(Date)
+          "y":
+          - Growth of Total Sales
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"9b3b60e0-1fb7-454f-9d4d-55935376dc41\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Growth of Total Sales\"],\"isOpposite\": false}},{\"id\": \"1aafd4ce-99c0-48b8-8761-08f6302b3726\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Week(Date)\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Growth of Total Sales\",\"color\": \"#2E75F0\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: a055e471-f7d9-484f-a001-ddc8f34c94dc
+  - id: Viz_8
+    answer:
+      name: Total Sales by Animal
+      tables:
+      - id: PetSpot
+        name: PetSpot
+        fqn: 4a3b455b-9542-47a4-9f02-6baac10149e6
+      search_query: "[Sales] by [Animal]"
+      answer_columns:
+      - name: Total Sales
+      - name: Animal
+      table:
+        table_columns:
+        - column_id: Animal
+          show_headline: false
+        - column_id: Total Sales
+          show_headline: false
+        ordered_column_ids:
+        - Animal
+        - Total Sales
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: PIE
+        chart_columns:
+        - column_id: Animal
+        - column_id: Total Sales
+        axis_configs:
+        - x:
+          - Animal
+          "y":
+          - Total Sales
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"a3a6431f-23e7-49fc-82d4-22730bca4d10\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Sales\"],\"isOpposite\": false}},{\"id\": \"5633e14b-68a1-40c3-b992-983e9ce85cd3\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Animal\"]}}],\"systemSeriesColors\": [{\"serieName\": \"c77b54db-aa52-47f3-a368-9b5d0790ff6f\",\"color\": \"#2E75F0\"},{\"serieName\": \"c06c5f54-8c7e-4f8c-b6e4-2ac75fd9cafb\",\"color\": \"#2E75F0\"},{\"serieName\": \"apparel\",\"color\": \"#721F27\"},{\"serieName\": \"apparel & accessories\",\"color\": \"#F47E89\"},{\"serieName\": \"aquarium cleaners\",\"color\": \"#B6313E\"},{\"serieName\": \"aquarium dcor\",\"color\": \"#F9B3B9\"},{\"serieName\": \"aquarium heaters\",\"color\": \"#F04152\"},{\"serieName\": \"aquarium hoods\",\"color\": \"#2F3947\"},{\"serieName\": \"aquarium hydrometers\",\"color\": \"#A2ACBA\"},{\"serieName\": \"aquarium lights\",\"color\": \"#47515F\"},{\"serieName\": \"aquarium pumps & filters\",\"color\": \"#BEC6D0\"},{\"serieName\": \"aquarium stands\",\"color\": \"#747E8C\"},{\"serieName\": \"aquarium substrate\",\"color\": \"#7A3D1F\"},{\"serieName\": \"aquarium test kits\",\"color\": \"#FFA97E\"},{\"serieName\": \"aquarium thermometers\",\"color\": \"#C26232\"},{\"serieName\": \"aquarium water treatments\",\"color\": \"#FFCCB3\"},{\"serieName\": \"aquariums & fish bowls\",\"color\": \"#FF8142\"},{\"serieName\": \"automatic feeders\",\"color\": \"#422E75\"},{\"serieName\": \"beds & furniture\",\"color\": \"#B094F8\"},{\"serieName\": \"breeding tanks\",\"color\": \"#6A4ABA\"},{\"serieName\": \"cages\",\"color\": \"#D1C0FB\"},{\"serieName\": \"cages & accessories\",\"color\": \"#8C62F5\"},{\"serieName\": \"cameras & monitors\",\"color\": \"#025B3C\"},{\"serieName\": \"carriers\",\"color\": \"#56D3A8\"},{\"serieName\": \"carriers & strollers\",\"color\": \"#049160\"},{\"serieName\": \"carriers & travel products\",\"color\": \"#9BE5CB\"},{\"serieName\": \"cat doors, steps, nets & pens\",\"color\": \"#06BF7F\"},{\"serieName\": \"collars, harnesses & leashes\",\"color\": \"#785F1A\"},{\"serieName\": \"crates, houses & pens\",\"color\": \"#FCD977\"},{\"serieName\": \"doors, gates & ramps\",\"color\": \"#BF982A\"},{\"serieName\": \"exercise wheels\",\"color\": \"#FDE9AF\"},{\"serieName\": \"feeding & watering supplies\",\"color\": \"#FCC838\"},{\"serieName\": \"flea & tick control\",\"color\": \"#22636B\"},{\"serieName\": \"food\",\"color\": \"#82DFE9\"},{\"serieName\": \"grooming\",\"color\": \"#369FAA\"},{\"serieName\": \"habitat dcor\",\"color\": \"#B5ECF2\"},{\"serieName\": \"habitat lighting\",\"color\": \"#48D1E0\"},{\"serieName\": \"houses & habitats\",\"color\": \"#163772\"},{\"serieName\": \"litter & housebreaking\",\"color\": \"#71A1F4\"},{\"serieName\": \"memorials\",\"color\": \"#2359B6\"},{\"serieName\": \"odor & stain removers\",\"color\": \"#ABC7F9\"},{\"serieName\": \"repellents & training aids\",\"color\": \"#2E75F0\"},{\"serieName\": \"reptile houses\",\"color\": \"#721F27\"},{\"serieName\": \"terrarium bedding, sand & substrate\",\"color\": \"#F47E89\"},{\"serieName\": \"terrarium bowls\",\"color\": \"#B6313E\"},{\"serieName\": \"terrarium covers\",\"color\": \"#F9B3B9\"},{\"serieName\": \"terrarium heat lamps & mats\",\"color\": \"#F04152\"},{\"serieName\": \"terrarium hygrometers\",\"color\": \"#2F3947\"},{\"serieName\": \"terrarium thermometers\",\"color\": \"#A2ACBA\"},{\"serieName\": \"terrariums\",\"color\": \"#47515F\"},{\"serieName\": \"toys\",\"color\": \"#BEC6D0\"},{\"serieName\": \"training & behavior aids\",\"color\": \"#747E8C\"},{\"serieName\": \"treats\",\"color\": \"#7A3D1F\"},{\"serieName\": \"vitamins, supplements & health supplies\",\"color\": \"#FFA97E\"},{\"serieName\": \"Total Sales\",\"color\": \"#48D1E0\"},{\"serieName\": \"birds\",\"color\": \"#06BF7F\"},{\"serieName\": \"cats\",\"color\": \"#FCC838\"},{\"serieName\": \"dogs\",\"color\": \"#82DFE9\"},{\"serieName\": \"fish & aquatic pets\",\"color\": \"#48D1E0\"},{\"serieName\": \"reptiles & amphibians\",\"color\": \"#71A1F4\"},{\"serieName\": \"small animals\",\"color\": \"#2E75F0\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: 49e9a661-7835-440d-8a70-71603b0232ce
+  - id: Viz_9
+    answer:
+      name: Regional Sales Monthly
+      tables:
+      - id: PetSpot
+        name: PetSpot
+        fqn: 4a3b455b-9542-47a4-9f02-6baac10149e6
+      search_query: "[Sales] by [Region] [Date].monthly"
+      answer_columns:
+      - name: Total Sales
+      - name: Region
+      - name: Month(Date)
+      table:
+        table_columns:
+        - column_id: Region
+          show_headline: false
+        - column_id: Month(Date)
+          show_headline: false
+        - column_id: Total Sales
+          show_headline: false
+        ordered_column_ids:
+        - Region
+        - Month(Date)
+        - Total Sales
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: STACKED_AREA
+        chart_columns:
+        - column_id: Region
+        - column_id: Month(Date)
+        - column_id: Total Sales
+        axis_configs:
+        - x:
+          - Month(Date)
+          "y":
+          - Total Sales
+          color:
+          - Region
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"d9a1f998-df81-463f-bf1b-ce24e2bdf949\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Sales\"],\"isOpposite\": false}},{\"id\": \"7132ed80-8abc-443e-9aa5-869d541e4160\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Month(Date)\"]}}],\"systemSeriesColors\": [{\"serieName\": \"east\",\"color\": \"#06BF7F\"},{\"serieName\": \"midwest\",\"color\": \"#FCC838\"},{\"serieName\": \"south\",\"color\": \"#48D1E0\"},{\"serieName\": \"southwest\",\"color\": \"#71A1F4\"},{\"serieName\": \"west\",\"color\": \"#2E75F0\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: 25f4c557-fcca-440a-a180-818c7dbf04b3
+  - id: Viz_10
+    answer:
+      name: Best Selling Brands
+      tables:
+      - id: PetSpot
+        name: PetSpot
+        fqn: 4a3b455b-9542-47a4-9f02-6baac10149e6
+      search_query: "top 10 [Sales] [Brand]"
+      answer_columns:
+      - name: Total Sales
+      - name: Brand
+      table:
+        table_columns:
+        - column_id: Brand
+          show_headline: false
+        - column_id: Total Sales
+          show_headline: false
+        ordered_column_ids:
+        - Brand
+        - Total Sales
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: BAR
+        chart_columns:
+        - column_id: Brand
+        - column_id: Total Sales
+        axis_configs:
+        - x:
+          - Brand
+          "y":
+          - Total Sales
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"7586e154-f21d-4287-894d-dd5a395c9f5e\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Sales\"],\"isOpposite\": false}},{\"id\": \"3c232ad0-e6f1-49fd-8dc5-d1b7975e6524\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Brand\"]}}],\"systemSeriesColors\": [{\"serieName\": \"east\",\"color\": \"#06BF7F\"},{\"serieName\": \"midwest\",\"color\": \"#FCC838\"},{\"serieName\": \"south\",\"color\": \"#48D1E0\"},{\"serieName\": \"southwest\",\"color\": \"#71A1F4\"},{\"serieName\": \"west\",\"color\": \"#2E75F0\"},{\"serieName\": \"20248882-4f88-5858-99ea-947f7b000a45\",\"color\": \"#747E8C\"},{\"serieName\": \"Total Sales\",\"color\": \"#FCC838\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: 98d18663-54d7-4e49-b487-c95074af3bbc
+  - id: Viz_11
+    answer:
+      name: Inventory by Department Breakdown
+      tables:
+      - id: PetSpot
+        name: PetSpot
+        fqn: 4a3b455b-9542-47a4-9f02-6baac10149e6
+      search_query: "[Inventory] [Animal]"
+      answer_columns:
+      - name: Total Inventory
+      - name: Animal
+      table:
+        table_columns:
+        - column_id: Animal
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Total Inventory
+          headline_aggregation: SUM
+        ordered_column_ids:
+        - Animal
+        - Total Inventory
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: PIE
+        chart_columns:
+        - column_id: Animal
+        - column_id: Total Inventory
+        axis_configs:
+        - x:
+          - Animal
+          "y":
+          - Total Inventory
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"1d08cc93-5dff-4aee-865e-6cdbb970e18e\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Inventory\"],\"isOpposite\": false}},{\"id\": \"c62dea75-76ec-4cfd-9964-0f29b550ee02\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Animal\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Total Inventory\",\"color\": \"#FF8142\"},{\"serieName\": \"birds\",\"color\": \"#06BF7F\"},{\"serieName\": \"cats\",\"color\": \"#FCC838\"},{\"serieName\": \"dogs\",\"color\": \"#82DFE9\"},{\"serieName\": \"fish & aquatic pets\",\"color\": \"#48D1E0\"},{\"serieName\": \"reptiles & amphibians\",\"color\": \"#71A1F4\"},{\"serieName\": \"small animals\",\"color\": \"#2E75F0\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: 76d8abfb-cc2a-4402-9467-3a6971ab6029
+  - id: Viz_12
+    answer:
+      name: Top Category Inventory
+      tables:
+      - id: PetSpot
+        name: PetSpot
+        fqn: 4a3b455b-9542-47a4-9f02-6baac10149e6
+      search_query: "[Inventory] [Category] top 10"
+      answer_columns:
+      - name: Total Inventory
+      - name: Category
+      table:
+        table_columns:
+        - column_id: Category
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Total Inventory
+          headline_aggregation: SUM
+        ordered_column_ids:
+        - Category
+        - Total Inventory
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: BAR
+        chart_columns:
+        - column_id: Category
+        - column_id: Total Inventory
+        axis_configs:
+        - x:
+          - Category
+          "y":
+          - Total Inventory
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"1d08cc93-5dff-4aee-865e-6cdbb970e18e\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Inventory\"],\"isOpposite\": false}},{\"id\": \"c62dea75-76ec-4cfd-9964-0f29b550ee02\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"f76c3d8d-ea87-4db0-9232-5b0cd4136270\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Total Inventory\",\"color\": \"#FF8142\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: cd2eaddf-73fa-49e4-8718-dc179841ecb8
+  - id: Viz_13
+    answer:
+      name: Sales vs Inventory Comparison
+      description: Filtered for Dog Product Categories
+      tables:
+      - id: PetSpot
+        name: PetSpot
+        fqn: 4a3b455b-9542-47a4-9f02-6baac10149e6
+      search_query: "[Sales] [Inventory] [Category] [Animal].dogs"
+      answer_columns:
+      - name: Total Sales
+      - name: Total Inventory
+      - name: Category
+      table:
+        table_columns:
+        - column_id: Category
+          show_headline: false
+        - column_id: Total Sales
+          show_headline: false
+        - column_id: Total Inventory
+          show_headline: false
+        ordered_column_ids:
+        - Category
+        - Total Sales
+        - Total Inventory
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: LINE_STACKED_COLUMN
+        chart_columns:
+        - column_id: Category
+        - column_id: Total Sales
+        - column_id: Total Inventory
+        axis_configs:
+        - x:
+          - Category
+          "y":
+          - Total Sales
+        - x:
+          - Category
+          "y":
+          - Total Inventory
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"b29c038a-f23d-43da-8ba8-ff1a41174bfe\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Sales\"],\"isOpposite\": false}},{\"id\": \"eb3518a6-85e8-497f-884c-e9f04ee49bde\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Inventory\"],\"isOpposite\": true}},{\"id\": \"b761757b-7e81-4a4c-a511-6187fefae839\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Category\"]}}],\"systemSeriesColors\": [{\"serieName\": \"5bb9d6a6-f561-4a0f-9da1-e5f94293fd00\",\"color\": \"#FF8142\"},{\"serieName\": \"apparel\",\"color\": \"#721F27\"},{\"serieName\": \"apparel & accessories\",\"color\": \"#F47E89\"},{\"serieName\": \"aquarium cleaners\",\"color\": \"#B6313E\"},{\"serieName\": \"aquarium dcor\",\"color\": \"#F9B3B9\"},{\"serieName\": \"aquarium heaters\",\"color\": \"#F04152\"},{\"serieName\": \"aquarium hoods\",\"color\": \"#2F3947\"},{\"serieName\": \"aquarium hydrometers\",\"color\": \"#A2ACBA\"},{\"serieName\": \"aquarium lights\",\"color\": \"#47515F\"},{\"serieName\": \"aquarium pumps & filters\",\"color\": \"#BEC6D0\"},{\"serieName\": \"aquarium stands\",\"color\": \"#747E8C\"},{\"serieName\": \"aquarium substrate\",\"color\": \"#7A3D1F\"},{\"serieName\": \"aquarium test kits\",\"color\": \"#FFA97E\"},{\"serieName\": \"aquarium thermometers\",\"color\": \"#C26232\"},{\"serieName\": \"aquarium water treatments\",\"color\": \"#FFCCB3\"},{\"serieName\": \"aquariums & fish bowls\",\"color\": \"#FF8142\"},{\"serieName\": \"automatic feeders\",\"color\": \"#422E75\"},{\"serieName\": \"beds & furniture\",\"color\": \"#B094F8\"},{\"serieName\": \"breeding tanks\",\"color\": \"#6A4ABA\"},{\"serieName\": \"cages\",\"color\": \"#D1C0FB\"},{\"serieName\": \"cages & accessories\",\"color\": \"#8C62F5\"},{\"serieName\": \"cameras & monitors\",\"color\": \"#025B3C\"},{\"serieName\": \"carriers\",\"color\": \"#56D3A8\"},{\"serieName\": \"carriers & strollers\",\"color\": \"#049160\"},{\"serieName\": \"carriers & travel products\",\"color\": \"#9BE5CB\"},{\"serieName\": \"cat doors, steps, nets & pens\",\"color\": \"#06BF7F\"},{\"serieName\": \"collars, harnesses & leashes\",\"color\": \"#785F1A\"},{\"serieName\": \"crates, houses & pens\",\"color\": \"#FCD977\"},{\"serieName\": \"doors, gates & ramps\",\"color\": \"#BF982A\"},{\"serieName\": \"exercise wheels\",\"color\": \"#FDE9AF\"},{\"serieName\": \"feeding & watering supplies\",\"color\": \"#FCC838\"},{\"serieName\": \"flea & tick control\",\"color\": \"#22636B\"},{\"serieName\": \"food\",\"color\": \"#82DFE9\"},{\"serieName\": \"grooming\",\"color\": \"#369FAA\"},{\"serieName\": \"habitat dcor\",\"color\": \"#B5ECF2\"},{\"serieName\": \"habitat lighting\",\"color\": \"#48D1E0\"},{\"serieName\": \"houses & habitats\",\"color\": \"#163772\"},{\"serieName\": \"litter & housebreaking\",\"color\": \"#71A1F4\"},{\"serieName\": \"memorials\",\"color\": \"#2359B6\"},{\"serieName\": \"odor & stain removers\",\"color\": \"#ABC7F9\"},{\"serieName\": \"repellents & training aids\",\"color\": \"#2E75F0\"},{\"serieName\": \"reptile houses\",\"color\": \"#721F27\"},{\"serieName\": \"terrarium bedding, sand & substrate\",\"color\": \"#F47E89\"},{\"serieName\": \"terrarium bowls\",\"color\": \"#B6313E\"},{\"serieName\": \"terrarium covers\",\"color\": \"#F9B3B9\"},{\"serieName\": \"terrarium heat lamps & mats\",\"color\": \"#F04152\"},{\"serieName\": \"terrarium hygrometers\",\"color\": \"#2F3947\"},{\"serieName\": \"terrarium thermometers\",\"color\": \"#A2ACBA\"},{\"serieName\": \"terrariums\",\"color\": \"#47515F\"},{\"serieName\": \"toys\",\"color\": \"#BEC6D0\"},{\"serieName\": \"training & behavior aids\",\"color\": \"#747E8C\"},{\"serieName\": \"treats\",\"color\": \"#7A3D1F\"},{\"serieName\": \"vitamins, supplements & health supplies\",\"color\": \"#FFA97E\"},{\"serieName\": \"Total Sales\",\"color\": \"#48D1E0\"},{\"serieName\": \"Total Inventory\",\"color\": \"#2E75F0\"},{\"serieName\": \"total inventory\",\"color\": \"#2E75F0\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: 9ad2e9e2-6ff3-4980-9d49-a77bd3c67589
+  - id: Viz_14
+    answer:
+      name: "Total Inventory by SKU, Brand, Product"
+      tables:
+      - id: PetSpot
+        name: PetSpot
+        fqn: 4a3b455b-9542-47a4-9f02-6baac10149e6
+      search_query: "[Inventory] [SKU] [Brand] [Product]"
+      answer_columns:
+      - name: Total Inventory
+      - name: SKU
+      - name: Brand
+      - name: Product
+      table:
+        table_columns:
+        - column_id: SKU
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Brand
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Product
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Total Inventory
+          headline_aggregation: SUM
+        ordered_column_ids:
+        - SKU
+        - Brand
+        - Product
+        - Total Inventory
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: COLUMN
+        chart_columns:
+        - column_id: SKU
+        - column_id: Brand
+        - column_id: Product
+        - column_id: Total Inventory
+        axis_configs:
+        - x:
+          - Product
+          "y":
+          - Total Inventory
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_OFF\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"c70bde8c-032e-4310-8677-5fe93e1f5576\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Inventory\"],\"isOpposite\": false}},{\"id\": \"d36ae814-0242-4a6a-8160-04a81c2e47ff\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Product\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Total Inventory\",\"color\": \"#FCC838\"}]}"
+      display_mode: TABLE_MODE
+    viz_guid: 32209bd5-7f53-4211-9608-fd52ae4836e4
+  - id: Viz_15
+    answer:
+      name: Inventory Stockpile by Brand
+      tables:
+      - id: PetSpot
+        name: PetSpot
+        fqn: 4a3b455b-9542-47a4-9f02-6baac10149e6
+      search_query: "[Brand] [Inventory] top 20"
+      answer_columns:
+      - name: Brand
+      - name: Total Inventory
+      table:
+        table_columns:
+        - column_id: Brand
+          show_headline: false
+        - column_id: Total Inventory
+          show_headline: false
+        ordered_column_ids:
+        - Brand
+        - Total Inventory
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: COLUMN
+        chart_columns:
+        - column_id: Brand
+        - column_id: Total Inventory
+        axis_configs:
+        - x:
+          - Brand
+          "y":
+          - Total Inventory
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"14670b93-ab5a-4bc6-9285-201fdbae2904\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Inventory\"],\"isOpposite\": false}},{\"id\": \"1c3c97b7-e136-408e-93ff-cd0815d237f7\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Brand\"]}}],\"systemSeriesColors\": [{\"serieName\": \"bdbe1220-9bb1-45a9-bc68-c502e7f0db3b\",\"color\": \"#FCC838\"},{\"serieName\": \"Total Inventory\",\"color\": \"#8C62F5\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: 76823e90-4cae-4dcd-bf53-debd230418ae
+  - id: Viz_16
+    answer:
+      name: Dog Sales Weekly
+      tables:
+      - id: PetSpot
+        name: PetSpot
+        fqn: 4a3b455b-9542-47a4-9f02-6baac10149e6
+      search_query: "[Animal].dogs [Sales] [Date].weekly"
+      answer_columns:
+      - name: Total Sales
+      - name: Week(Date)
+      table:
+        table_columns:
+        - column_id: Week(Date)
+          headline_aggregation: MIN-MAX
+        - column_id: Total Sales
+          headline_aggregation: SUM
+        ordered_column_ids:
+        - Week(Date)
+        - Total Sales
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: KPI
+        chart_columns:
+        - column_id: Week(Date)
+        - column_id: Total Sales
+        axis_configs:
+        - x:
+          - Week(Date)
+          "y":
+          - Total Sales
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"acae29a7-ef13-4fb6-841e-9b0d368348a2\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Sales\"],\"isOpposite\": false}},{\"id\": \"dcf5c10f-fe2b-43f5-a2e3-47cb59a76af3\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Week(Date)\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Total Sales\",\"color\": \"#2770ef\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: 129ad4f4-edb2-4896-8096-41f030ad05b2
+  - id: Viz_17
+    answer:
+      name: Cat Sales Weekly
+      tables:
+      - id: PetSpot
+        name: PetSpot
+        fqn: 4a3b455b-9542-47a4-9f02-6baac10149e6
+      search_query: "[Animal].cats [Sales] [Date].weekly"
+      answer_columns:
+      - name: Total Sales
+      - name: Week(Date)
+      table:
+        table_columns:
+        - column_id: Week(Date)
+          headline_aggregation: MIN-MAX
+        - column_id: Total Sales
+          headline_aggregation: SUM
+        ordered_column_ids:
+        - Week(Date)
+        - Total Sales
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: KPI
+        chart_columns:
+        - column_id: Week(Date)
+        - column_id: Total Sales
+        axis_configs:
+        - x:
+          - Week(Date)
+          "y":
+          - Total Sales
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"521d35b4-13fd-4fb0-b741-6364ba386002\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Sales\"],\"isOpposite\": false}},{\"id\": \"3d6f0c6c-a15f-4cf1-8c85-c5b11d380bb8\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Week(Date)\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Total Sales\",\"color\": \"#2770ef\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: e9bf0922-c309-4c22-b64a-e5f229a89a1f
+  - id: Viz_18
+    answer:
+      name: Monthly Sales by Category
+      tables:
+      - id: PetSpot
+        name: PetSpot
+        fqn: 4a3b455b-9542-47a4-9f02-6baac10149e6
+      search_query: "[Category] [Sales] [Date].monthly"
+      answer_columns:
+      - name: Category
+      - name: Total Sales
+      - name: Month(Date)
+      table:
+        table_columns:
+        - column_id: Category
+          show_headline: false
+        - column_id: Month(Date)
+          show_headline: false
+        - column_id: Total Sales
+          show_headline: false
+        ordered_column_ids:
+        - Category
+        - Month(Date)
+        - Total Sales
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: LINE
+        chart_columns:
+        - column_id: Category
+        - column_id: Month(Date)
+        - column_id: Total Sales
+        axis_configs:
+        - x:
+          - Month(Date)
+          "y":
+          - Total Sales
+          color:
+          - Category
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"2d64b1ca-90b5-47e7-b045-562e0fa152d1\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Sales\"],\"isOpposite\": false}},{\"id\": \"3f7731a8-1282-418d-bc88-cad930d3c7fd\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Month(Date)\"]}}],\"systemSeriesColors\": [{\"serieName\": \"9925497a-0d3c-4734-8c8b-2decc6328f31\",\"color\": \"#2770ef\"},{\"serieName\": \"apparel\",\"color\": \"#2E75F0\"},{\"serieName\": \"apparel & accessories\",\"color\": \"#48D1E0\"},{\"serieName\": \"aquarium cleaners\",\"color\": \"#FCC838\"},{\"serieName\": \"aquarium dcor\",\"color\": \"#06BF7F\"},{\"serieName\": \"aquarium heaters\",\"color\": \"#8C62F5\"},{\"serieName\": \"aquarium hoods\",\"color\": \"#FF8142\"},{\"serieName\": \"aquarium hydrometers\",\"color\": \"#ABC7F9\"},{\"serieName\": \"aquarium lights\",\"color\": \"#B5ECF2\"},{\"serieName\": \"aquarium pumps & filters\",\"color\": \"#FDE9AF\"},{\"serieName\": \"aquarium stands\",\"color\": \"#9BE5CB\"},{\"serieName\": \"aquarium substrate\",\"color\": \"#D1C0FB\"},{\"serieName\": \"aquarium test kits\",\"color\": \"#FFCCB3\"},{\"serieName\": \"aquarium thermometers\",\"color\": \"#2359B6\"},{\"serieName\": \"aquarium water treatments\",\"color\": \"#369FAA\"},{\"serieName\": \"aquariums & fish bowls\",\"color\": \"#BF982A\"},{\"serieName\": \"automatic feeders\",\"color\": \"#049160\"},{\"serieName\": \"beds & furniture\",\"color\": \"#6A4ABA\"},{\"serieName\": \"breeding tanks\",\"color\": \"#C26232\"},{\"serieName\": \"cages\",\"color\": \"#71A1F4\"},{\"serieName\": \"cages & accessories\",\"color\": \"#82DFE9\"},{\"serieName\": \"cameras & monitors\",\"color\": \"#FCD977\"},{\"serieName\": \"carriers\",\"color\": \"#56D3A8\"},{\"serieName\": \"carriers & strollers\",\"color\": \"#B094F8\"},{\"serieName\": \"carriers & travel products\",\"color\": \"#FFA97E\"},{\"serieName\": \"cat doors, steps, nets & pens\",\"color\": \"#163772\"},{\"serieName\": \"collars, harnesses & leashes\",\"color\": \"#22636B\"},{\"serieName\": \"crates, houses & pens\",\"color\": \"#785F1A\"},{\"serieName\": \"doors, gates & ramps\",\"color\": \"#025B3C\"},{\"serieName\": \"exercise wheels\",\"color\": \"#422E75\"},{\"serieName\": \"feeding & watering supplies\",\"color\": \"#7A3D1F\"},{\"serieName\": \"flea & tick control\",\"color\": \"#2E75F0\"},{\"serieName\": \"food\",\"color\": \"#48D1E0\"},{\"serieName\": \"grooming\",\"color\": \"#FCC838\"},{\"serieName\": \"habitat dcor\",\"color\": \"#06BF7F\"},{\"serieName\": \"habitat lighting\",\"color\": \"#8C62F5\"},{\"serieName\": \"houses & habitats\",\"color\": \"#FF8142\"},{\"serieName\": \"litter & housebreaking\",\"color\": \"#ABC7F9\"},{\"serieName\": \"memorials\",\"color\": \"#B5ECF2\"},{\"serieName\": \"odor & stain removers\",\"color\": \"#FDE9AF\"},{\"serieName\": \"repellents & training aids\",\"color\": \"#9BE5CB\"},{\"serieName\": \"reptile houses\",\"color\": \"#D1C0FB\"},{\"serieName\": \"terrarium bedding, sand & substrate\",\"color\": \"#FFCCB3\"},{\"serieName\": \"terrarium bowls\",\"color\": \"#2359B6\"},{\"serieName\": \"terrarium covers\",\"color\": \"#369FAA\"},{\"serieName\": \"terrarium heat lamps & mats\",\"color\": \"#BF982A\"},{\"serieName\": \"terrarium hygrometers\",\"color\": \"#049160\"},{\"serieName\": \"terrarium thermometers\",\"color\": \"#6A4ABA\"},{\"serieName\": \"terrariums\",\"color\": \"#C26232\"},{\"serieName\": \"toys\",\"color\": \"#71A1F4\"},{\"serieName\": \"training & behavior aids\",\"color\": \"#82DFE9\"},{\"serieName\": \"treats\",\"color\": \"#FCD977\"},{\"serieName\": \"vitamins, supplements & health supplies\",\"color\": \"#56D3A8\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: e831eee9-b6ca-4280-91c2-53eb69c1eae6
+  - id: Viz_19
+    answer:
+      name: Monthly Sales by Animal
+      tables:
+      - id: PetSpot
+        name: PetSpot
+        fqn: 4a3b455b-9542-47a4-9f02-6baac10149e6
+      search_query: "[Date].monthly [Sales] by [Animal]"
+      answer_columns:
+      - name: Month(Date)
+      - name: Total Sales
+      - name: Animal
+      table:
+        table_columns:
+        - column_id: Month(Date)
+          show_headline: false
+        - column_id: Animal
+          show_headline: false
+        - column_id: Total Sales
+          show_headline: false
+        ordered_column_ids:
+        - Month(Date)
+        - Animal
+        - Total Sales
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: LINE
+        chart_columns:
+        - column_id: Month(Date)
+        - column_id: Animal
+        - column_id: Total Sales
+        axis_configs:
+        - x:
+          - Month(Date)
+          "y":
+          - Total Sales
+          color:
+          - Animal
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"cf418642-f4b9-4104-bc23-de00e054f801\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Sales\"],\"isOpposite\": false}},{\"id\": \"eef51c23-68a6-45ab-832e-3d9570de0626\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Month(Date)\"]}}],\"systemSeriesColors\": [{\"serieName\": \"9925497a-0d3c-4734-8c8b-2decc6328f31\",\"color\": \"#2770ef\"},{\"serieName\": \"apparel\",\"color\": \"#2E75F0\"},{\"serieName\": \"apparel & accessories\",\"color\": \"#48D1E0\"},{\"serieName\": \"aquarium cleaners\",\"color\": \"#FCC838\"},{\"serieName\": \"aquarium dcor\",\"color\": \"#06BF7F\"},{\"serieName\": \"aquarium heaters\",\"color\": \"#8C62F5\"},{\"serieName\": \"aquarium hoods\",\"color\": \"#FF8142\"},{\"serieName\": \"aquarium hydrometers\",\"color\": \"#ABC7F9\"},{\"serieName\": \"aquarium lights\",\"color\": \"#B5ECF2\"},{\"serieName\": \"aquarium pumps & filters\",\"color\": \"#FDE9AF\"},{\"serieName\": \"aquarium stands\",\"color\": \"#9BE5CB\"},{\"serieName\": \"aquarium substrate\",\"color\": \"#D1C0FB\"},{\"serieName\": \"aquarium test kits\",\"color\": \"#FFCCB3\"},{\"serieName\": \"aquarium thermometers\",\"color\": \"#2359B6\"},{\"serieName\": \"aquarium water treatments\",\"color\": \"#369FAA\"},{\"serieName\": \"aquariums & fish bowls\",\"color\": \"#BF982A\"},{\"serieName\": \"automatic feeders\",\"color\": \"#049160\"},{\"serieName\": \"beds & furniture\",\"color\": \"#6A4ABA\"},{\"serieName\": \"breeding tanks\",\"color\": \"#C26232\"},{\"serieName\": \"cages\",\"color\": \"#71A1F4\"},{\"serieName\": \"cages & accessories\",\"color\": \"#82DFE9\"},{\"serieName\": \"cameras & monitors\",\"color\": \"#FCD977\"},{\"serieName\": \"carriers\",\"color\": \"#56D3A8\"},{\"serieName\": \"carriers & strollers\",\"color\": \"#B094F8\"},{\"serieName\": \"carriers & travel products\",\"color\": \"#FFA97E\"},{\"serieName\": \"cat doors, steps, nets & pens\",\"color\": \"#163772\"},{\"serieName\": \"collars, harnesses & leashes\",\"color\": \"#22636B\"},{\"serieName\": \"crates, houses & pens\",\"color\": \"#785F1A\"},{\"serieName\": \"doors, gates & ramps\",\"color\": \"#025B3C\"},{\"serieName\": \"exercise wheels\",\"color\": \"#422E75\"},{\"serieName\": \"feeding & watering supplies\",\"color\": \"#7A3D1F\"},{\"serieName\": \"flea & tick control\",\"color\": \"#2E75F0\"},{\"serieName\": \"food\",\"color\": \"#48D1E0\"},{\"serieName\": \"grooming\",\"color\": \"#FCC838\"},{\"serieName\": \"habitat dcor\",\"color\": \"#06BF7F\"},{\"serieName\": \"habitat lighting\",\"color\": \"#8C62F5\"},{\"serieName\": \"houses & habitats\",\"color\": \"#FF8142\"},{\"serieName\": \"litter & housebreaking\",\"color\": \"#ABC7F9\"},{\"serieName\": \"memorials\",\"color\": \"#B5ECF2\"},{\"serieName\": \"odor & stain removers\",\"color\": \"#FDE9AF\"},{\"serieName\": \"repellents & training aids\",\"color\": \"#9BE5CB\"},{\"serieName\": \"reptile houses\",\"color\": \"#D1C0FB\"},{\"serieName\": \"terrarium bedding, sand & substrate\",\"color\": \"#FFCCB3\"},{\"serieName\": \"terrarium bowls\",\"color\": \"#2359B6\"},{\"serieName\": \"terrarium covers\",\"color\": \"#369FAA\"},{\"serieName\": \"terrarium heat lamps & mats\",\"color\": \"#BF982A\"},{\"serieName\": \"terrarium hygrometers\",\"color\": \"#049160\"},{\"serieName\": \"terrarium thermometers\",\"color\": \"#6A4ABA\"},{\"serieName\": \"terrariums\",\"color\": \"#C26232\"},{\"serieName\": \"toys\",\"color\": \"#71A1F4\"},{\"serieName\": \"training & behavior aids\",\"color\": \"#82DFE9\"},{\"serieName\": \"treats\",\"color\": \"#FCD977\"},{\"serieName\": \"vitamins, supplements & health supplies\",\"color\": \"#56D3A8\"},{\"serieName\": \"birds\",\"color\": \"#2E75F0\"},{\"serieName\": \"cats\",\"color\": \"#48D1E0\"},{\"serieName\": \"dogs\",\"color\": \"#FCC838\"},{\"serieName\": \"fish & aquatic pets\",\"color\": \"#06BF7F\"},{\"serieName\": \"reptiles & amphibians\",\"color\": \"#8C62F5\"},{\"serieName\": \"small animals\",\"color\": \"#FF8142\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: 8dbef3b2-1256-4f47-a4f5-8d1f9da4986b
+  - id: Viz_20
+    answer:
+      name: ' Food Sales Weekly'
+      tables:
+      - id: PetSpot
+        name: PetSpot
+        fqn: 4a3b455b-9542-47a4-9f02-6baac10149e6
+      search_query: "[Category].food [Sales] [Date].weekly"
+      answer_columns:
+      - name: Total Sales
+      - name: Week(Date)
+      table:
+        table_columns:
+        - column_id: Week(Date)
+          show_headline: false
+        - column_id: Total Sales
+          show_headline: false
+        ordered_column_ids:
+        - Week(Date)
+        - Total Sales
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: KPI
+        chart_columns:
+        - column_id: Week(Date)
+        - column_id: Total Sales
+        axis_configs:
+        - x:
+          - Week(Date)
+          "y":
+          - Total Sales
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"70185157-9fb5-4249-b6db-ce309c150fd5\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Sales\"],\"isOpposite\": false}},{\"id\": \"cc775725-a9a5-4ee4-9105-9c8fec5760e3\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Week(Date)\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Total Sales\",\"color\": \"#2770ef\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: 19c92159-8d37-401a-909e-c79b7194356d
+  - id: Viz_21
+    answer:
+      name: Toys Sales Weekly
+      tables:
+      - id: PetSpot
+        name: PetSpot
+        fqn: 4a3b455b-9542-47a4-9f02-6baac10149e6
+      search_query: "[Category].toys [Sales] [Date].weekly"
+      answer_columns:
+      - name: Total Sales
+      - name: Week(Date)
+      table:
+        table_columns:
+        - column_id: Week(Date)
+          show_headline: false
+        - column_id: Total Sales
+          show_headline: false
+        ordered_column_ids:
+        - Week(Date)
+        - Total Sales
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: KPI
+        chart_columns:
+        - column_id: Week(Date)
+        - column_id: Total Sales
+        axis_configs:
+        - x:
+          - Week(Date)
+          "y":
+          - Total Sales
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"3640e183-6168-44b7-863a-c6b7c2282b0a\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Sales\"],\"isOpposite\": false}},{\"id\": \"af07c4b6-929a-47a0-a06d-bcdcbf2c29d4\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Week(Date)\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Total Sales\",\"color\": \"#2770ef\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: fdd6eb35-1a84-44d9-b000-d7c95546c730
+  - id: Viz_22
+    answer:
+      name: Total Sales by Category and Animal
+      tables:
+      - id: PetSpot
+        name: PetSpot
+        fqn: 4a3b455b-9542-47a4-9f02-6baac10149e6
+      search_query: "[Animal] [Category] [Sales]"
+      answer_columns:
+      - name: Animal
+      - name: Category
+      - name: Total Sales
+      table:
+        table_columns:
+        - column_id: Animal
+          show_headline: false
+        - column_id: Category
+          show_headline: false
+        - column_id: Total Sales
+          show_headline: false
+        ordered_column_ids:
+        - Animal
+        - Category
+        - Total Sales
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: STACKED_COLUMN
+        chart_columns:
+        - column_id: Animal
+        - column_id: Category
+        - column_id: Total Sales
+        axis_configs:
+        - x:
+          - Category
+          "y":
+          - Total Sales
+          color:
+          - Animal
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"b901c807-d5ad-4f5d-aca3-4b05383de5a2\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Sales\"],\"isOpposite\": false}},{\"id\": \"591025c7-bf90-4c4a-b356-e918e2ce5e85\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Category\"]}}],\"systemSeriesColors\": [{\"serieName\": \"995d5553-1e52-4eae-8764-81787eb8a500\",\"color\": \"#2770ef\"},{\"serieName\": \"birds\",\"color\": \"#06BF7F\"},{\"serieName\": \"cats\",\"color\": \"#FCC838\"},{\"serieName\": \"dogs\",\"color\": \"#82DFE9\"},{\"serieName\": \"fish & aquatic pets\",\"color\": \"#48D1E0\"},{\"serieName\": \"reptiles & amphibians\",\"color\": \"#71A1F4\"},{\"serieName\": \"small animals\",\"color\": \"#2E75F0\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: af29bad8-c149-489d-a904-eff42e5d41e1
+  - id: Viz_23
+    answer:
+      name: Sales Product Breakdown
+      tables:
+      - id: PetSpot
+        name: PetSpot
+        fqn: 4a3b455b-9542-47a4-9f02-6baac10149e6
+      search_query: "[SKU] [Category] [Brand] [Product] [Sales]"
+      answer_columns:
+      - name: SKU
+      - name: Category
+      - name: Brand
+      - name: Product
+      - name: Total Sales
+      table:
+        table_columns:
+        - column_id: SKU
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Category
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Brand
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Product
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Total Sales
+          headline_aggregation: SUM
+        ordered_column_ids:
+        - SKU
+        - Category
+        - Brand
+        - Product
+        - Total Sales
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\",\"columnProperties\": [{\"columnId\": \"SKU\",\"columnProperty\": {}},{\"columnId\": \"Category\",\"columnProperty\": {}},{\"columnId\": \"Brand\",\"columnProperty\": {}},{\"columnId\": \"Product\",\"columnProperty\": {}},{\"columnId\": \"Total Sales\",\"columnProperty\": {}}]}"
+      chart:
+        type: COLUMN
+        chart_columns:
+        - column_id: SKU
+        - column_id: Category
+        - column_id: Brand
+        - column_id: Product
+        - column_id: Total Sales
+        axis_configs:
+        - x:
+          - Product
+          "y":
+          - Total Sales
+          color:
+          - Category
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"gridLines\": {},\"responsiveLayoutPreference\": \"USER_PREFERRED_ON\",\"chartSpecific\": {}},\"columnProperties\": [{\"columnId\": \"Total Sales\",\"columnProperty\": {}},{\"columnId\": \"Product\",\"columnProperty\": {}},{\"columnId\": \"Category\",\"columnProperty\": {}}],\"axisProperties\": [{\"id\": \"6c3cfec2-0ac5-4f67-93ff-20c65310c323\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Sales\"],\"isOpposite\": false}},{\"id\": \"f430a4cf-1431-47c0-af4e-ff42defc8c97\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Product\"]}}]}"
+      display_mode: TABLE_MODE
+    viz_guid: 3186697f-d7f4-4f68-a5f6-8b58df3014fb
+  - id: Viz_24
+    answer:
+      name: South Sales Weekly
+      tables:
+      - id: PetSpot
+        name: PetSpot
+        fqn: 4a3b455b-9542-47a4-9f02-6baac10149e6
+      search_query: "[Region].south [Sales] [Date].weekly"
+      answer_columns:
+      - name: Total Sales
+      - name: Week(Date)
+      table:
+        table_columns:
+        - column_id: Week(Date)
+          show_headline: false
+        - column_id: Total Sales
+          show_headline: false
+        ordered_column_ids:
+        - Week(Date)
+        - Total Sales
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: KPI
+        chart_columns:
+        - column_id: Week(Date)
+        - column_id: Total Sales
+        axis_configs:
+        - x:
+          - Week(Date)
+          "y":
+          - Total Sales
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"fa020f89-96e4-4cc3-b8aa-1fc4fce3d660\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Sales\"],\"isOpposite\": false}},{\"id\": \"76cb6255-038a-42e1-b7dd-2c1c857a7f19\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Week(Date)\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Total Sales\",\"color\": \"#2770ef\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: fd34bd1e-29f5-4f21-9ceb-b5f96fad5d7e
+  - id: Viz_25
+    answer:
+      name: West Sales Weekly
+      tables:
+      - id: PetSpot
+        name: PetSpot
+        fqn: 4a3b455b-9542-47a4-9f02-6baac10149e6
+      search_query: "[Region].west [Sales] [Date].weekly"
+      answer_columns:
+      - name: Total Sales
+      - name: Week(Date)
+      table:
+        table_columns:
+        - column_id: Week(Date)
+          show_headline: false
+        - column_id: Total Sales
+          show_headline: false
+        ordered_column_ids:
+        - Week(Date)
+        - Total Sales
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: KPI
+        chart_columns:
+        - column_id: Week(Date)
+        - column_id: Total Sales
+        axis_configs:
+        - x:
+          - Week(Date)
+          "y":
+          - Total Sales
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"040a5917-0a17-491d-aaf4-412c032789a6\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Sales\"],\"isOpposite\": false}},{\"id\": \"ff19f8f2-8b6c-4850-b82b-58d008ef4ae1\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Week(Date)\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Total Sales\",\"color\": \"#2770ef\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: 5fcea51c-334e-4e88-a8d7-94522cb4c7b4
+  - id: Viz_26
+    answer:
+      name: Southwest Sales Weekly
+      tables:
+      - id: PetSpot
+        name: PetSpot
+        fqn: 4a3b455b-9542-47a4-9f02-6baac10149e6
+      search_query: "[Region].southwest [Sales] [Date].weekly"
+      answer_columns:
+      - name: Total Sales
+      - name: Week(Date)
+      table:
+        table_columns:
+        - column_id: Week(Date)
+          headline_aggregation: MIN-MAX
+        - column_id: Total Sales
+          headline_aggregation: SUM
+        ordered_column_ids:
+        - Week(Date)
+        - Total Sales
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: KPI
+        chart_columns:
+        - column_id: Week(Date)
+        - column_id: Total Sales
+        axis_configs:
+        - x:
+          - Week(Date)
+          "y":
+          - Total Sales
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"230c9cbc-f53a-45e8-9cc0-d7d783a7682b\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Sales\"],\"isOpposite\": false}},{\"id\": \"84f88809-63e2-4dc2-8c71-77177811dd63\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Week(Date)\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Total Sales\",\"color\": \"#2770ef\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: b16fdcd0-38d0-40e8-b0ec-65ebeb7898da
+  - id: Viz_27
+    answer:
+      name: East Sales Weekly
+      tables:
+      - id: PetSpot
+        name: PetSpot
+        fqn: 4a3b455b-9542-47a4-9f02-6baac10149e6
+      search_query: "[Region].east [Sales] [Date].weekly"
+      answer_columns:
+      - name: Total Sales
+      - name: Week(Date)
+      table:
+        table_columns:
+        - column_id: Week(Date)
+          show_headline: false
+        - column_id: Total Sales
+          show_headline: false
+        ordered_column_ids:
+        - Week(Date)
+        - Total Sales
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: KPI
+        chart_columns:
+        - column_id: Week(Date)
+        - column_id: Total Sales
+        axis_configs:
+        - x:
+          - Week(Date)
+          "y":
+          - Total Sales
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"46147c1c-835c-4020-8eee-de2cc5d7e211\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Sales\"],\"isOpposite\": false}},{\"id\": \"cc311572-07c4-46ef-ada3-8c40b6b0732d\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Week(Date)\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Total Sales\",\"color\": \"#2770ef\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: b742fbe6-071a-41ef-82b9-134d1f9959dd
+  - id: Viz_28
+    answer:
+      name: Regional Sales by Animal
+      tables:
+      - id: PetSpot
+        name: PetSpot
+        fqn: 4a3b455b-9542-47a4-9f02-6baac10149e6
+      search_query: "[Date].monthly [Region] [Sales] [Animal]"
+      answer_columns:
+      - name: Month(Date)
+      - name: Region
+      - name: Total Sales
+      - name: Animal
+      table:
+        table_columns:
+        - column_id: Month(Date)
+          show_headline: false
+        - column_id: Region
+          show_headline: false
+        - column_id: Animal
+          show_headline: false
+        - column_id: Total Sales
+          show_headline: false
+        ordered_column_ids:
+        - Month(Date)
+        - Region
+        - Animal
+        - Total Sales
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: STACKED_BAR
+        chart_columns:
+        - column_id: Month(Date)
+        - column_id: Region
+        - column_id: Animal
+        - column_id: Total Sales
+        axis_configs:
+        - x:
+          - Region
+          "y":
+          - Total Sales
+          color:
+          - Animal
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"57c6d310-1f64-4897-ba64-c79a56e1e343\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Sales\"],\"isOpposite\": false}},{\"id\": \"42a6a685-4f5c-4dc4-aef9-c8f9456ea89d\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Region\"]}}],\"systemSeriesColors\": [{\"serieName\": \"east, birds\",\"color\": \"#A2ACBA\"},{\"serieName\": \"east, cats\",\"color\": \"#47515F\"},{\"serieName\": \"east, dogs\",\"color\": \"#BEC6D0\"},{\"serieName\": \"east, fish & aquatic pets\",\"color\": \"#747E8C\"},{\"serieName\": \"east, reptiles & amphibians\",\"color\": \"#FFA97E\"},{\"serieName\": \"east, small animals\",\"color\": \"#C26232\"},{\"serieName\": \"midwest, birds\",\"color\": \"#FFCCB3\"},{\"serieName\": \"midwest, cats\",\"color\": \"#FF8142\"},{\"serieName\": \"midwest, dogs\",\"color\": \"#B094F8\"},{\"serieName\": \"midwest, fish & aquatic pets\",\"color\": \"#6A4ABA\"},{\"serieName\": \"midwest, reptiles & amphibians\",\"color\": \"#D1C0FB\"},{\"serieName\": \"midwest, small animals\",\"color\": \"#8C62F5\"},{\"serieName\": \"south, birds\",\"color\": \"#56D3A8\"},{\"serieName\": \"south, cats\",\"color\": \"#049160\"},{\"serieName\": \"south, dogs\",\"color\": \"#9BE5CB\"},{\"serieName\": \"south, fish & aquatic pets\",\"color\": \"#06BF7F\"},{\"serieName\": \"south, reptiles & amphibians\",\"color\": \"#FCD977\"},{\"serieName\": \"south, small animals\",\"color\": \"#BF982A\"},{\"serieName\": \"southwest, birds\",\"color\": \"#FDE9AF\"},{\"serieName\": \"southwest, cats\",\"color\": \"#FCC838\"},{\"serieName\": \"southwest, dogs\",\"color\": \"#22636B\"},{\"serieName\": \"southwest, fish & aquatic pets\",\"color\": \"#82DFE9\"},{\"serieName\": \"southwest, reptiles & amphibians\",\"color\": \"#369FAA\"},{\"serieName\": \"southwest, small animals\",\"color\": \"#B5ECF2\"},{\"serieName\": \"west, birds\",\"color\": \"#48D1E0\"},{\"serieName\": \"west, cats\",\"color\": \"#163772\"},{\"serieName\": \"west, dogs\",\"color\": \"#71A1F4\"},{\"serieName\": \"west, fish & aquatic pets\",\"color\": \"#2359B6\"},{\"serieName\": \"west, reptiles & amphibians\",\"color\": \"#ABC7F9\"},{\"serieName\": \"west, small animals\",\"color\": \"#2E75F0\"},{\"serieName\": \"birds\",\"color\": \"#06BF7F\"},{\"serieName\": \"cats\",\"color\": \"#FCC838\"},{\"serieName\": \"dogs\",\"color\": \"#82DFE9\"},{\"serieName\": \"fish & aquatic pets\",\"color\": \"#48D1E0\"},{\"serieName\": \"reptiles & amphibians\",\"color\": \"#71A1F4\"},{\"serieName\": \"small animals\",\"color\": \"#2E75F0\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: b4569733-b687-4ca2-ad48-98773d8719dc
+  - id: Viz_29
+    answer:
+      name: Regional Stores by State
+      tables:
+      - id: PetSpot
+        name: PetSpot
+        fqn: 4a3b455b-9542-47a4-9f02-6baac10149e6
+      search_query: "[Region] [State] [Sales]"
+      answer_columns:
+      - name: Region
+      - name: State
+      - name: Total Sales
+      table:
+        table_columns:
+        - column_id: Region
+          show_headline: false
+        - column_id: State
+          show_headline: false
+        - column_id: Total Sales
+          show_headline: false
+        ordered_column_ids:
+        - Region
+        - State
+        - Total Sales
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: STACKED_COLUMN
+        chart_columns:
+        - column_id: Region
+        - column_id: State
+        - column_id: Total Sales
+        axis_configs:
+        - x:
+          - Region
+          "y":
+          - Total Sales
+          color:
+          - State
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"mapviewport\": {\"center\": [-1.0670154693088695E7,4614999.07705929],\"zoomLevel\": 4.419455755225782},\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"efc1a120-f0ad-43bd-8fec-b957844c3031\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Sales\"],\"isOpposite\": false}},{\"id\": \"c761c4c8-dc7d-4daf-a9fa-b014b1a57d0c\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Region\"]}}],\"systemSeriesColors\": [{\"serieName\": \"east\",\"color\": \"#06BF7F\"},{\"serieName\": \"midwest\",\"color\": \"#FCC838\"},{\"serieName\": \"south\",\"color\": \"#48D1E0\"},{\"serieName\": \"southwest\",\"color\": \"#71A1F4\"},{\"serieName\": \"west\",\"color\": \"#2E75F0\"},{\"serieName\": \"Total Sales\",\"color\": \"#8C62F5\"},{\"serieName\": \"alabama\",\"color\": \"#721F27\"},{\"serieName\": \"arizona\",\"color\": \"#F47E89\"},{\"serieName\": \"arkansas\",\"color\": \"#B6313E\"},{\"serieName\": \"california\",\"color\": \"#F9B3B9\"},{\"serieName\": \"colorado\",\"color\": \"#F04152\"},{\"serieName\": \"connecticut\",\"color\": \"#2F3947\"},{\"serieName\": \"delaware\",\"color\": \"#A2ACBA\"},{\"serieName\": \"district of columbia\",\"color\": \"#47515F\"},{\"serieName\": \"florida\",\"color\": \"#BEC6D0\"},{\"serieName\": \"georgia\",\"color\": \"#747E8C\"},{\"serieName\": \"idaho\",\"color\": \"#7A3D1F\"},{\"serieName\": \"illinois\",\"color\": \"#FFA97E\"},{\"serieName\": \"indiana\",\"color\": \"#C26232\"},{\"serieName\": \"iowa\",\"color\": \"#FFCCB3\"},{\"serieName\": \"kansas\",\"color\": \"#FF8142\"},{\"serieName\": \"kentucky\",\"color\": \"#422E75\"},{\"serieName\": \"louisiana\",\"color\": \"#B094F8\"},{\"serieName\": \"maine\",\"color\": \"#6A4ABA\"},{\"serieName\": \"maryland\",\"color\": \"#D1C0FB\"},{\"serieName\": \"massachusetts\",\"color\": \"#8C62F5\"},{\"serieName\": \"michigan\",\"color\": \"#025B3C\"},{\"serieName\": \"minnesota\",\"color\": \"#56D3A8\"},{\"serieName\": \"mississippi\",\"color\": \"#049160\"},{\"serieName\": \"missouri\",\"color\": \"#9BE5CB\"},{\"serieName\": \"montana\",\"color\": \"#06BF7F\"},{\"serieName\": \"nebraska\",\"color\": \"#785F1A\"},{\"serieName\": \"nevada\",\"color\": \"#FCD977\"},{\"serieName\": \"new hampshire\",\"color\": \"#BF982A\"},{\"serieName\": \"new jersey\",\"color\": \"#FDE9AF\"},{\"serieName\": \"new mexico\",\"color\": \"#FCC838\"},{\"serieName\": \"new york\",\"color\": \"#22636B\"},{\"serieName\": \"north carolina\",\"color\": \"#82DFE9\"},{\"serieName\": \"north dakota\",\"color\": \"#369FAA\"},{\"serieName\": \"ohio\",\"color\": \"#B5ECF2\"},{\"serieName\": \"oklahoma\",\"color\": \"#48D1E0\"},{\"serieName\": \"oregon\",\"color\": \"#163772\"},{\"serieName\": \"pennsylvania\",\"color\": \"#71A1F4\"},{\"serieName\": \"rhode island\",\"color\": \"#2359B6\"},{\"serieName\": \"south carolina\",\"color\": \"#ABC7F9\"},{\"serieName\": \"south dakota\",\"color\": \"#2E75F0\"},{\"serieName\": \"tennessee\",\"color\": \"#721F27\"},{\"serieName\": \"texas\",\"color\": \"#F47E89\"},{\"serieName\": \"utah\",\"color\": \"#B6313E\"},{\"serieName\": \"vermont\",\"color\": \"#F9B3B9\"},{\"serieName\": \"virginia\",\"color\": \"#F04152\"},{\"serieName\": \"washington\",\"color\": \"#2F3947\"},{\"serieName\": \"west virginia\",\"color\": \"#A2ACBA\"},{\"serieName\": \"wisconsin\",\"color\": \"#47515F\"},{\"serieName\": \"wyoming\",\"color\": \"#BEC6D0\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: e5db6a47-0266-4351-ae04-a6d348ef3da2
+  - id: Viz_30
+    answer:
+      name: Southwest Sales Weekly
+      tables:
+      - id: PetSpot
+        name: PetSpot
+        fqn: 4a3b455b-9542-47a4-9f02-6baac10149e6
+      search_query: "growth of [Sales] by [Date] [Date].monthly [Region]"
+      answer_columns:
+      - name: Growth of Total Sales
+      - name: Region
+      - name: Month(Date)
+      table:
+        table_columns:
+        - column_id: Region
+          show_headline: false
+        - column_id: Month(Date)
+          show_headline: false
+        - column_id: Growth of Total Sales
+          show_headline: false
+        ordered_column_ids:
+        - Region
+        - Month(Date)
+        - Growth of Total Sales
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: WATERFALL
+        chart_columns:
+        - column_id: Region
+        - column_id: Month(Date)
+        - column_id: Growth of Total Sales
+        axis_configs:
+        - x:
+          - Month(Date)
+          "y":
+          - Growth of Total Sales
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"d87dc364-dca7-4a42-afdd-8db91ce9f629\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Growth of Total Sales\"],\"isOpposite\": false}},{\"id\": \"09c1bcf3-6708-4bff-af1e-620a641d9b96\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Month(Date)\"]}}],\"systemSeriesColors\": [{\"serieName\": \"east\",\"color\": \"#06BF7F\"},{\"serieName\": \"midwest\",\"color\": \"#FCC838\"},{\"serieName\": \"south\",\"color\": \"#48D1E0\"},{\"serieName\": \"southwest\",\"color\": \"#71A1F4\"},{\"serieName\": \"west\",\"color\": \"#2E75F0\"},{\"serieName\": \"5b28bbbc-5f39-47b9-aeb4-f3b843a36589\",\"color\": \"#8C62F5\"},{\"serieName\": \"alabama\",\"color\": \"#721F27\"},{\"serieName\": \"arizona\",\"color\": \"#F47E89\"},{\"serieName\": \"arkansas\",\"color\": \"#B6313E\"},{\"serieName\": \"california\",\"color\": \"#F9B3B9\"},{\"serieName\": \"colorado\",\"color\": \"#F04152\"},{\"serieName\": \"connecticut\",\"color\": \"#2F3947\"},{\"serieName\": \"delaware\",\"color\": \"#A2ACBA\"},{\"serieName\": \"district of columbia\",\"color\": \"#47515F\"},{\"serieName\": \"florida\",\"color\": \"#BEC6D0\"},{\"serieName\": \"georgia\",\"color\": \"#747E8C\"},{\"serieName\": \"idaho\",\"color\": \"#7A3D1F\"},{\"serieName\": \"illinois\",\"color\": \"#FFA97E\"},{\"serieName\": \"indiana\",\"color\": \"#C26232\"},{\"serieName\": \"iowa\",\"color\": \"#FFCCB3\"},{\"serieName\": \"kansas\",\"color\": \"#FF8142\"},{\"serieName\": \"kentucky\",\"color\": \"#422E75\"},{\"serieName\": \"louisiana\",\"color\": \"#B094F8\"},{\"serieName\": \"maine\",\"color\": \"#6A4ABA\"},{\"serieName\": \"maryland\",\"color\": \"#D1C0FB\"},{\"serieName\": \"massachusetts\",\"color\": \"#8C62F5\"},{\"serieName\": \"michigan\",\"color\": \"#025B3C\"},{\"serieName\": \"minnesota\",\"color\": \"#56D3A8\"},{\"serieName\": \"mississippi\",\"color\": \"#049160\"},{\"serieName\": \"missouri\",\"color\": \"#9BE5CB\"},{\"serieName\": \"montana\",\"color\": \"#06BF7F\"},{\"serieName\": \"nebraska\",\"color\": \"#785F1A\"},{\"serieName\": \"nevada\",\"color\": \"#FCD977\"},{\"serieName\": \"new hampshire\",\"color\": \"#BF982A\"},{\"serieName\": \"new jersey\",\"color\": \"#FDE9AF\"},{\"serieName\": \"new mexico\",\"color\": \"#FCC838\"},{\"serieName\": \"new york\",\"color\": \"#22636B\"},{\"serieName\": \"north carolina\",\"color\": \"#82DFE9\"},{\"serieName\": \"north dakota\",\"color\": \"#369FAA\"},{\"serieName\": \"ohio\",\"color\": \"#B5ECF2\"},{\"serieName\": \"oklahoma\",\"color\": \"#48D1E0\"},{\"serieName\": \"oregon\",\"color\": \"#163772\"},{\"serieName\": \"pennsylvania\",\"color\": \"#71A1F4\"},{\"serieName\": \"rhode island\",\"color\": \"#2359B6\"},{\"serieName\": \"south carolina\",\"color\": \"#ABC7F9\"},{\"serieName\": \"south dakota\",\"color\": \"#2E75F0\"},{\"serieName\": \"tennessee\",\"color\": \"#721F27\"},{\"serieName\": \"texas\",\"color\": \"#F47E89\"},{\"serieName\": \"utah\",\"color\": \"#B6313E\"},{\"serieName\": \"vermont\",\"color\": \"#F9B3B9\"},{\"serieName\": \"virginia\",\"color\": \"#F04152\"},{\"serieName\": \"washington\",\"color\": \"#2F3947\"},{\"serieName\": \"west virginia\",\"color\": \"#A2ACBA\"},{\"serieName\": \"wisconsin\",\"color\": \"#47515F\"},{\"serieName\": \"wyoming\",\"color\": \"#BEC6D0\"},{\"serieName\": \"Growth of Total Sales\",\"color\": \"#8C62F5\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: 0d91dd2b-587c-41dc-b677-a12a2f06d628
+  - id: Viz_31
+    answer:
+      name: Sales by State
+      tables:
+      - id: PetSpot
+        name: PetSpot
+        fqn: 4a3b455b-9542-47a4-9f02-6baac10149e6
+      search_query: "[Sales] by [State]"
+      answer_columns:
+      - name: Total Sales
+      - name: State
+      table:
+        table_columns:
+        - column_id: State
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Total Sales
+          headline_aggregation: SUM
+        ordered_column_ids:
+        - State
+        - Total Sales
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: GEO_AREA
+        chart_columns:
+        - column_id: State
+        - column_id: Total Sales
+        axis_configs:
+        - x:
+          - State
+          "y":
+          - Total Sales
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"mapviewport\": {\"center\": [-1.0670154693088695E7,4614999.07705929],\"zoomLevel\": 4.419455755225782},\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"68426eeb-1ae7-47a8-9be6-e62c3b780b82\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Sales\"],\"isOpposite\": false}},{\"id\": \"64c761b9-06c1-44cf-aff4-7580c9da37b6\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"State\"]}}],\"systemMultiColorSeriesColors\": [{\"serieName\": \"Total Sales\",\"colorMap\": [{\"serieName\": \"State\",\"color\": [\"#ffffb2\",\"#fddd87\",\"#fba35d\",\"#f75534\",\"#f9140a\",\"#d70315\",\"#b10026\"]}]}]}"
+      display_mode: CHART_MODE
+    viz_guid: 4ef2cf3e-c095-4820-aa05-947d8d0b58b4
+  - id: Viz_32
+    answer:
+      name: Weekly Quantity Sold
+      tables:
+      - id: PetSpot
+        name: PetSpot
+        fqn: 4a3b455b-9542-47a4-9f02-6baac10149e6
+      search_query: "[Quantity Sold] [Date].monthly"
+      answer_columns:
+      - name: Total Quantity Sold
+      - name: Month(Date)
+      table:
+        table_columns:
+        - column_id: Month(Date)
+          headline_aggregation: MIN-MAX
+        - column_id: Total Quantity Sold
+          headline_aggregation: SUM
+        ordered_column_ids:
+        - Month(Date)
+        - Total Quantity Sold
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: KPI
+        chart_columns:
+        - column_id: Month(Date)
+        - column_id: Total Quantity Sold
+        axis_configs:
+        - x:
+          - Month(Date)
+          "y":
+          - Total Quantity Sold
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"963e8bb0-faab-4225-8f6d-5db448f3271b\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Quantity Sold\"],\"isOpposite\": false}},{\"id\": \"59266a75-193e-4976-8573-cb449724d348\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Month(Date)\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Total Quantity Sold\",\"color\": \"#2770ef\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: 3dfa9977-d23c-4e5d-b04b-c7830a591334
+  - id: Viz_33
+    answer:
+      name: Quantity Monthly
+      tables:
+      - id: PetSpot
+        name: PetSpot
+        fqn: 4a3b455b-9542-47a4-9f02-6baac10149e6
+      search_query: "[Quantity Sold] [Date].monthly"
+      answer_columns:
+      - name: Total Quantity Sold
+      - name: Month(Date)
+      table:
+        table_columns:
+        - column_id: Month(Date)
+          headline_aggregation: MIN-MAX
+        - column_id: Total Quantity Sold
+          headline_aggregation: SUM
+        ordered_column_ids:
+        - Month(Date)
+        - Total Quantity Sold
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: LINE
+        chart_columns:
+        - column_id: Month(Date)
+        - column_id: Total Quantity Sold
+        axis_configs:
+        - x:
+          - Month(Date)
+          "y":
+          - Total Quantity Sold
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"6f219c07-c91f-4554-8681-4d5b691c22a6\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Quantity Sold\"],\"isOpposite\": false}},{\"id\": \"82ff2b49-55ab-4539-807d-a7b9914709d8\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Month(Date)\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Total Quantity Sold\",\"color\": \"#2E75F0\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: a25493cd-0df2-4155-b339-af59f5909666
+  - id: Viz_34
+    answer:
+      name: "Sales(cats), Sales(dogs) by Monthly Date"
+      tables:
+      - id: PetSpot
+        name: PetSpot
+        fqn: 4a3b455b-9542-47a4-9f02-6baac10149e6
+      search_query: "[Sales] [Animal].dogs vs [Animal].cats [Date].monthly"
+      answer_columns:
+      - name: Sales(cats)
+      - name: Sales(dogs)
+      - name: Month(Date)
+      table:
+        table_columns:
+        - column_id: Month(Date)
+          show_headline: false
+        - column_id: Sales(cats)
+          show_headline: false
+        - column_id: Sales(dogs)
+          show_headline: false
+        ordered_column_ids:
+        - Month(Date)
+        - Sales(cats)
+        - Sales(dogs)
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: STACKED_COLUMN
+        chart_columns:
+        - column_id: Month(Date)
+        - column_id: Sales(cats)
+        - column_id: Sales(dogs)
+        axis_configs:
+        - x:
+          - Month(Date)
+          "y":
+          - Sales(cats)
+          - Sales(dogs)
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"9f547e30-737a-4afd-8164-47f19c2c9633\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Sales(cats)\",\"Sales(dogs)\"],\"isOpposite\": false}},{\"id\": \"c20e3f69-9667-4190-bb28-d3edda4fe740\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Month(Date)\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Sales(cats)\",\"color\": \"#48D1E0\"},{\"serieName\": \"Sales(dogs)\",\"color\": \"#2E75F0\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: d480f4cc-c83b-4b29-b34b-f030d905ab2b
+  - id: Viz_35
+    answer:
+      name: Food Sales monthly trends
+      tables:
+      - id: PetSpot
+        name: PetSpot
+        fqn: 4a3b455b-9542-47a4-9f02-6baac10149e6
+      search_query: "[Sales] [Animal].cats vs [Animal].dogs [Date] [Date].monthly"
+      answer_columns:
+      - name: Month(Date)
+      - name: Sales(dogs)
+      - name: Sales(cats)
+      table:
+        table_columns:
+        - column_id: Month(Date)
+          show_headline: false
+        - column_id: Sales(dogs)
+          show_headline: false
+        - column_id: Sales(cats)
+          show_headline: false
+        ordered_column_ids:
+        - Month(Date)
+        - Sales(dogs)
+        - Sales(cats)
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: LINE
+        chart_columns:
+        - column_id: Month(Date)
+        - column_id: Sales(dogs)
+        - column_id: Sales(cats)
+        axis_configs:
+        - x:
+          - Month(Date)
+          "y":
+          - Sales(dogs)
+          - Sales(cats)
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"f24b1578-8287-4e4e-b4dd-e59e3da45c7e\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Sales(dogs)\"],\"isOpposite\": false}},{\"id\": \"291a6521-96d6-4ee5-b1ec-1d83cfc1cd2c\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Sales(cats)\"],\"isOpposite\": true}},{\"id\": \"52bfa8bc-c074-4d77-8d24-01b320ea8ba0\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Month(Date)\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Sales(dogs)\",\"color\": \"#2E75F0\"},{\"serieName\": \"Sales(cats)\",\"color\": \"#48D1E0\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: a73566df-4502-4956-b34e-a33156df2395
+  filters:
+  - column:
+    - Animal
+    oper: in
+    values:
+    - cats
+    - "{null}"
+    - Birds
+    - Dogs
+    - Fish & Aquatic Pets
+    - Reptiles & Amphibians
+    - Small Animals
+    is_mandatory: false
+    is_single_value: false
+    display_name: ""
+  layout:
+    tabs:
+    - name: Sales Analysis
+      description: ""
+      tiles:
+      - visualization_id: Viz_1
+        x: 6
+        "y": 16
+        height: 4
+        width: 6
+      - visualization_id: Viz_2
+        x: 0
+        "y": 4
+        height: 4
+        width: 12
+      - visualization_id: Viz_3
+        x: 6
+        "y": 0
+        height: 4
+        width: 6
+      - visualization_id: Viz_4
+        x: 0
+        "y": 8
+        height: 8
+        width: 6
+      - visualization_id: Viz_5
+        x: 6
+        "y": 20
+        height: 4
+        width: 6
+      - visualization_id: Viz_6
+        x: 0
+        "y": 0
+        height: 4
+        width: 3
+      - visualization_id: Viz_7
+        x: 0
+        "y": 16
+        height: 4
+        width: 6
+      - visualization_id: Viz_8
+        x: 6
+        "y": 8
+        height: 8
+        width: 6
+      - visualization_id: Viz_9
+        x: 0
+        "y": 20
+        height: 8
+        width: 6
+      - visualization_id: Viz_10
+        x: 6
+        "y": 24
+        height: 4
+        width: 6
+      - visualization_id: Viz_32
+        x: 3
+        "y": 0
+        height: 4
+        width: 3
+      - visualization_id: Viz_34
+        x: 0
+        "y": 28
+        height: 8
+        width: 6
+      - visualization_id: Viz_35
+        x: 6
+        "y": 28
+        height: 8
+        width: 6
+    - name: Store Sales
+      description: ""
+      tiles:
+      - visualization_id: Viz_24
+        x: 0
+        "y": 0
+        height: 4
+        width: 3
+      - visualization_id: Viz_25
+        x: 3
+        "y": 0
+        height: 4
+        width: 3
+      - visualization_id: Viz_26
+        x: 6
+        "y": 0
+        height: 4
+        width: 3
+      - visualization_id: Viz_27
+        x: 9
+        "y": 0
+        height: 4
+        width: 3
+      - visualization_id: Viz_28
+        x: 0
+        "y": 4
+        height: 8
+        width: 6
+      - visualization_id: Viz_29
+        x: 6
+        "y": 4
+        height: 8
+        width: 6
+      - visualization_id: Viz_30
+        x: 0
+        "y": 12
+        height: 4
+        width: 12
+      - visualization_id: Viz_31
+        x: 0
+        "y": 16
+        height: 8
+        width: 12
+    - name: Product Performance
+      description: ""
+      tiles:
+      - visualization_id: Viz_16
+        x: 0
+        "y": 0
+        height: 4
+        width: 3
+      - visualization_id: Viz_17
+        x: 3
+        "y": 0
+        height: 4
+        width: 3
+      - visualization_id: Viz_18
+        x: 6
+        "y": 4
+        height: 8
+        width: 6
+      - visualization_id: Viz_19
+        x: 0
+        "y": 4
+        height: 8
+        width: 6
+      - visualization_id: Viz_20
+        x: 6
+        "y": 0
+        height: 4
+        width: 3
+      - visualization_id: Viz_21
+        x: 9
+        "y": 0
+        height: 4
+        width: 3
+      - visualization_id: Viz_22
+        x: 0
+        "y": 12
+        height: 8
+        width: 12
+      - visualization_id: Viz_23
+        x: 0
+        "y": 20
+        height: 8
+        width: 12
+    - name: Inventory Analysis
+      description: ""
+      tiles:
+      - visualization_id: Viz_11
+        x: 0
+        "y": 4
+        height: 8
+        width: 6
+      - visualization_id: Viz_12
+        x: 6
+        "y": 4
+        height: 8
+        width: 6
+      - visualization_id: Viz_13
+        x: 0
+        "y": 12
+        height: 8
+        width: 6
+      - visualization_id: Viz_14
+        x: 0
+        "y": 20
+        height: 8
+        width: 12
+      - visualization_id: Viz_15
+        x: 6
+        "y": 12
+        height: 8
+        width: 6
+      - visualization_id: Viz_33
+        x: 0
+        "y": 0
+        height: 4
+        width: 12
