@@ -1,0 +1,24 @@
+guid: 8ccdade6-3490-4a3a-adc6-5520782d0aab
+table:
+  name: DIM_IVM_CHANNELS
+  db: PMMDB
+  schema: INVENTORYPLANNING
+  db_table: DIM_IVM_CHANNELS
+  connection:
+    name: Inventory Planning
+    fqn: 5b94b317-27f9-4003-a5ce-9f856a4589c4
+  columns:
+  - name: CHANNELID
+    db_column_name: CHANNELID
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: INT64
+  - name: CHANNEL
+    db_column_name: CHANNEL
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR

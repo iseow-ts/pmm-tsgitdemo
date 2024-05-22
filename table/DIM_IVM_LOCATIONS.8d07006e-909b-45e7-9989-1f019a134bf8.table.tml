@@ -1,0 +1,101 @@
+guid: 8d07006e-909b-45e7-9989-1f019a134bf8
+table:
+  name: DIM_IVM_LOCATIONS
+  db: PMMDB
+  schema: INVENTORYPLANNING
+  db_table: DIM_IVM_LOCATIONS
+  connection:
+    name: Inventory Planning
+    fqn: 5b94b317-27f9-4003-a5ce-9f856a4589c4
+  columns:
+  - name: LOCATIONID
+    db_column_name: LOCATIONID
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: INT64
+  - name: LOCATIONNAME
+    db_column_name: LOCATIONNAME
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: ADDRESS
+    db_column_name: ADDRESS
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: CITY
+    db_column_name: CITY
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: STATE
+    db_column_name: STATE
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: ZIPCODE
+    db_column_name: ZIPCODE
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: COUNTY
+    db_column_name: COUNTY
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: LATITUDE
+    db_column_name: LATITUDE
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: DOUBLE
+  - name: LONGITUDE
+    db_column_name: LONGITUDE
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: DOUBLE
+  - name: TYPE
+    db_column_name: TYPE
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: FIPS
+    db_column_name: FIPS
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: REGION
+    db_column_name: REGION
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  joins_with:
+  - name: C_DIM_IVM_LOCATIONS_DIM_IVM_LOCATIONS_REF
+    destination:
+      name: DIM_IVM_LOCATIONS_REF
+      fqn: c4aa22c9-63fd-4456-ba13-f9d43d00f2c1
+    "on": "([DIM_IVM_LOCATIONS::FIPS] = [DIM_IVM_LOCATIONS_REF::FIPS])"
+    type: INNER
+  - name: TS_DIM_IVM_LOCATIONS_JHU_LOCATION_REF
+    destination:
+      name: JHU_LOCATION_REF
+      fqn: 6d5453be-7ee1-447f-bb58-1465d677a8a5
+    "on": "([DIM_IVM_LOCATIONS::FIPS] = [JHU_LOCATION_REF::FIPS])"
+    type: INNER

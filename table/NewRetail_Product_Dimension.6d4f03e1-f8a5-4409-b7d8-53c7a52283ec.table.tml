@@ -1,0 +1,102 @@
+guid: 6d4f03e1-f8a5-4409-b7d8-53c7a52283ec
+table:
+  name: NewRetail_Product_Dimension
+  db: PMMDB
+  schema: NEWRETAIL
+  db_table: NewRetail_Product_Dimension
+  connection:
+    name: NewRetail_Snowflake
+    fqn: ce2a3f15-ca2d-4bd1-8d53-ca60c85ee776
+  columns:
+  - name: Product_Key
+    db_column_name: Product_Key
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: VARCHAR
+  - name: Category
+    db_column_name: Category
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: Department_Key
+    db_column_name: Department_Key
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: Product_Name
+    db_column_name: Product_Name
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: SKU_Number
+    db_column_name: SKU_Number
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: Price
+    db_column_name: Price
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+    db_column_properties:
+      data_type: DOUBLE
+  - name: Markup
+    db_column_name: Markup
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+    db_column_properties:
+      data_type: DOUBLE
+  - name: Region_West
+    db_column_name: Region_West
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+    db_column_properties:
+      data_type: INT64
+  - name: Region_Southwest
+    db_column_name: Region_Southwest
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+    db_column_properties:
+      data_type: INT64
+  - name: Region_South
+    db_column_name: Region_South
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+    db_column_properties:
+      data_type: INT64
+  - name: Region_Midwest
+    db_column_name: Region_Midwest
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+    db_column_properties:
+      data_type: INT64
+  - name: Region_East
+    db_column_name: Region_East
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+    db_column_properties:
+      data_type: INT64
+  - name: Brand
+    db_column_name: Brand
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: Product
+    db_column_name: Product
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR

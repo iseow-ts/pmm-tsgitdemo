@@ -125,8 +125,8 @@ liveboard:
     answer:
       name: Sales by State - Last 3 Months
       tables:
-      - id: Retail Sales
-        name: Retail Sales
+      - id: Grocery Sales
+        name: Grocery Sales
         fqn: 3fe3cf49-2726-41a7-a51a-bc9728d8a24f
       search_query: "[Store State] [Sales] [Date].'last 3 months' [Age Group].18-24 [Age Group].25-34 [Age Group].35-44 [Age Group].45-54 [Age Group].55-64 [Age Group].65+ [Store Region].southwest [Store Region].west [Category].food [Category].non-food"
       answer_columns:

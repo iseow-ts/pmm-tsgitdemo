@@ -1,0 +1,98 @@
+guid: a7da15c2-5bd8-43bf-a20e-3913ae9edd52
+table:
+  name: FACT_IVM_SALES
+  db: PMMDB
+  schema: INVENTORYPLANNING
+  db_table: FACT_IVM_SALES
+  connection:
+    name: Inventory Planning
+    fqn: 5b94b317-27f9-4003-a5ce-9f856a4589c4
+  columns:
+  - name: SALESID
+    db_column_name: SALESID
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: INT64
+  - name: PRODUCTID
+    db_column_name: PRODUCTID
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: INT64
+  - name: LOCATIONID
+    db_column_name: LOCATIONID
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: INT64
+  - name: QUANTITYPURCHASED
+    db_column_name: QUANTITYPURCHASED
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: INT64
+  - name: ITEMPRICE
+    db_column_name: ITEMPRICE
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: DOUBLE
+  - name: SALES
+    db_column_name: SALES
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: DOUBLE
+  - name: RECORDDATE
+    db_column_name: RECORDDATE
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: DATE
+  - name: CHANNELID
+    db_column_name: CHANNELID
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: INT64
+  joins_with:
+  - name: C_FACT_IVM_SALES_DIM_IVM_CHANNELS
+    destination:
+      name: DIM_IVM_CHANNELS
+      fqn: 8ccdade6-3490-4a3a-adc6-5520782d0aab
+    "on": "([FACT_IVM_SALES::CHANNELID] = [DIM_IVM_CHANNELS::CHANNELID])"
+    type: INNER
+  - name: C_FACT_IVM_SALES_DIM_IVM_DATE_REF
+    destination:
+      name: DIM_IVM_DATE_REF
+      fqn: 8b57d94b-9fae-44a0-8d2f-4ef70e80ad1e
+    "on": "([FACT_IVM_SALES::RECORDDATE] = [DIM_IVM_DATE_REF::RECORDDATE])"
+    type: INNER
+  - name: C_FACT_IVM_SALES_DIM_IVM_LOCATIONS
+    destination:
+      name: DIM_IVM_LOCATIONS
+      fqn: 8d07006e-909b-45e7-9989-1f019a134bf8
+    "on": "([FACT_IVM_SALES::LOCATIONID] = [DIM_IVM_LOCATIONS::LOCATIONID])"
+    type: INNER
+  - name: C_FACT_IVM_SALES_DIM_IVM_PRODUCTS
+    destination:
+      name: DIM_IVM_PRODUCTS
+      fqn: 67763713-feff-4a61-b123-78b9d5d8d6f4
+    "on": "([FACT_IVM_SALES::PRODUCTID] = [DIM_IVM_PRODUCTS::PRODUCTID])"
+    type: INNER
