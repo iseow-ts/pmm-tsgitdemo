@@ -1,0 +1,30 @@
+guid: 67763713-feff-4a61-b123-78b9d5d8d6f4
+table:
+  name: DIM_IVM_PRODUCTS
+  db: PMMDB
+  schema: INVENTORYPLANNING
+  db_table: DIM_IVM_PRODUCTS
+  connection:
+    name: Inventory Planning
+    fqn: 5b94b317-27f9-4003-a5ce-9f856a4589c4
+  columns:
+  - name: PRODUCTID
+    db_column_name: PRODUCTID
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: INT64
+  - name: PRODUCTNAME
+    db_column_name: PRODUCTNAME
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: PRODUCTTYPE
+    db_column_name: PRODUCTTYPE
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR

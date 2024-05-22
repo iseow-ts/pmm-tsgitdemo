@@ -1,0 +1,157 @@
+guid: b421ac02-efa5-4048-b08f-07d0dce55b61
+table:
+  name: NewRetail_Store_Dimension
+  db: PMMDB
+  schema: NEWRETAIL
+  db_table: NewRetail_Store_Dimension
+  connection:
+    name: NewRetail_Snowflake
+    fqn: ce2a3f15-ca2d-4bd1-8d53-ca60c85ee776
+  columns:
+  - name: Store_Key
+    db_column_name: Store_Key
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: VARCHAR
+  - name: Store_Name
+    db_column_name: Store_Name
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: Store_Number
+    db_column_name: Store_Number
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: Store_Address
+    db_column_name: Store_Address
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: Store_City
+    db_column_name: Store_City
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: Store_State
+    db_column_name: Store_State
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: Store_Region
+    db_column_name: Store_Region
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: Floor_Plan_Type
+    db_column_name: Floor_Plan_Type
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: Photo_Processing_Type
+    db_column_name: Photo_Processing_Type
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: Financial_Service_Type
+    db_column_name: Financial_Service_Type
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: Selling_Square_Footage
+    db_column_name: Selling_Square_Footage
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+    db_column_properties:
+      data_type: INT64
+  - name: Total_Square_Footage
+    db_column_name: Total_Square_Footage
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+    db_column_properties:
+      data_type: INT64
+  - name: First_Open_Date
+    db_column_name: First_Open_Date
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: DATE
+  - name: Last_Remodel_Date
+    db_column_name: Last_Remodel_Date
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: DATE
+  - name: Number_of_Employees
+    db_column_name: Number_of_Employees
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+    db_column_properties:
+      data_type: INT64
+  - name: Annual_Shrinkage
+    db_column_name: Annual_Shrinkage
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+    db_column_properties:
+      data_type: INT64
+  - name: Foot_Traffic
+    db_column_name: Foot_Traffic
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+    db_column_properties:
+      data_type: INT64
+  - name: Monthly_Rent_Cost
+    db_column_name: Monthly_Rent_Cost
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+    db_column_properties:
+      data_type: INT64
+  - name: Store_Zip_Code
+    db_column_name: Store_Zip_Code
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: Store_County
+    db_column_name: Store_County
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: Latitude
+    db_column_name: Latitude
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+    db_column_properties:
+      data_type: DOUBLE
+  - name: Longitude
+    db_column_name: Longitude
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+    db_column_properties:
+      data_type: DOUBLE
+  - name: Store_Type
+    db_column_name: Store_Type
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR

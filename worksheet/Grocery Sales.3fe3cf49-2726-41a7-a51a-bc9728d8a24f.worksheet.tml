@@ -1,0 +1,417 @@
+guid: 3fe3cf49-2726-41a7-a51a-bc9728d8a24f
+worksheet:
+  name: Grocery Sales
+  tables:
+  - name: NewRetail_Baskets_Fact
+    fqn: f8108fd2-1526-4708-b008-42afb43a7de4
+  - name: NewRetail_Customer_Dimension
+    fqn: 7c62383c-074f-459b-9499-6acd400007b5
+  - name: NewRetail_Product_Diet_Dimension
+    fqn: d4ce9796-e14f-443b-8bf0-ff3204f092e6
+  - name: NewRetail_Product_Dimension
+    fqn: 6d4f03e1-f8a5-4409-b7d8-53c7a52283ec
+  - name: NewRetail_Promotion_Dimension
+    fqn: 7288f4d0-9f8f-4ea4-afb7-eb6b26b8149d
+  - name: NewRetail_Sales_Fact
+    fqn: fef8ccd3-fec6-4f30-b0ce-5c8d662e05a5
+  - name: NewRetail_Store_Dimension
+    fqn: b421ac02-efa5-4048-b08f-07d0dce55b61
+  joins:
+  - name: Diet_Key - Diet_Key
+    source: NewRetail_Baskets_Fact
+    destination: NewRetail_Product_Diet_Dimension
+    type: INNER
+    is_one_to_one: false
+  - name: Product_Key - Product_Key
+    source: NewRetail_Baskets_Fact
+    destination: NewRetail_Product_Dimension
+    type: INNER
+    is_one_to_one: false
+  - name: POS_Transaction_Number - POS_Transaction_Number
+    source: NewRetail_Baskets_Fact
+    destination: NewRetail_Sales_Fact
+    type: INNER
+    is_one_to_one: false
+  - name: Promotion_Key - Promotion_Key
+    source: NewRetail_Baskets_Fact
+    destination: NewRetail_Promotion_Dimension
+    type: LEFT_OUTER
+    is_one_to_one: false
+  - name: Customer_Key - Customer_Key
+    source: NewRetail_Sales_Fact
+    destination: NewRetail_Customer_Dimension
+    type: INNER
+    is_one_to_one: false
+  - name: Store_Key - Store_Key
+    source: NewRetail_Sales_Fact
+    destination: NewRetail_Store_Dimension
+    type: INNER
+    is_one_to_one: false
+  table_paths:
+  - id: NewRetail_Baskets_Fact_1
+    table: NewRetail_Baskets_Fact
+    join_path:
+    - {}
+  - id: NewRetail_Customer_Dimension_1
+    table: NewRetail_Customer_Dimension
+    join_path:
+    - join:
+      - POS_Transaction_Number - POS_Transaction_Number
+      - Customer_Key - Customer_Key
+  - id: NewRetail_Product_Diet_Dimension_1
+    table: NewRetail_Product_Diet_Dimension
+    join_path:
+    - join:
+      - Diet_Key - Diet_Key
+  - id: NewRetail_Product_Dimension_1
+    table: NewRetail_Product_Dimension
+    join_path:
+    - join:
+      - Product_Key - Product_Key
+  - id: NewRetail_Promotion_Dimension_1
+    table: NewRetail_Promotion_Dimension
+    join_path:
+    - join:
+      - Promotion_Key - Promotion_Key
+  - id: NewRetail_Sales_Fact_1
+    table: NewRetail_Sales_Fact
+    join_path:
+    - join:
+      - POS_Transaction_Number - POS_Transaction_Number
+  - id: NewRetail_Store_Dimension_1
+    table: NewRetail_Store_Dimension
+    join_path:
+    - join:
+      - POS_Transaction_Number - POS_Transaction_Number
+      - Store_Key - Store_Key
+  formulas:
+  - name: Age Group
+    expr: "if ( [NewRetail_Customer_Dimension_1::Customer_Age] >= 18 and [NewRetail_Customer_Dimension_1::Customer_Age] <= 24 ) then '18-24' else if ( [NewRetail_Customer_Dimension_1::Customer_Age] >= 25 and [NewRetail_Customer_Dimension_1::Customer_Age] <= 34 ) then '25-34' else if ( [NewRetail_Customer_Dimension_1::Customer_Age] >= 35 and [NewRetail_Customer_Dimension_1::Customer_Age] <= 44 ) then '35-44' else if ( [NewRetail_Customer_Dimension_1::Customer_Age] >= 45 and [NewRetail_Customer_Dimension_1::Customer_Age] <= 54 ) then '45-54' else if ( [NewRetail_Customer_Dimension_1::Customer_Age] >= 55 and [NewRetail_Customer_Dimension_1::Customer_Age] <= 64 ) then '55-64' else if ( [NewRetail_Customer_Dimension_1::Customer_Age] >= 65 ) then '65+' else 'corporate'"
+    was_auto_generated: false
+  - name: Average Basket Size
+    expr: "average ( group_aggregate ( sum ( [NewRetail_Baskets_Fact_1::Sales_Quantity] ) , query_groups ( ) + { [NewRetail_Baskets_Fact_1::POS_Transaction_Number] } , query_filters ( ) ) )"
+    was_auto_generated: false
+  - name: Average Frequency
+    expr: "average ( group_aggregate ( count ( [NewRetail_Baskets_Fact_1::POS_Transaction_Number] ) , query_groups ( ) + { [NewRetail_Customer_Dimension_1::Customer_Key] } , query_filters ( ) ) )"
+    was_auto_generated: false
+  - name: Average Ticket Size
+    expr: "average ( group_aggregate ( sum ( [NewRetail_Baskets_Fact_1::Sales_Dollar_Amount] ) , query_groups ( ) + { [NewRetail_Baskets_Fact_1::POS_Transaction_Number] } , query_filters ( ) ) )"
+    was_auto_generated: false
+  - name: Basket Contents
+    expr: "group_aggregate ( sum ( [NewRetail_Baskets_Fact_1::Sales_Quantity] ) , query_groups ( ) - { [NewRetail_Baskets_Fact_1::POS_Transaction_Number] } , query_filters ( ) ) / group_aggregate ( unique count ( [NewRetail_Baskets_Fact_1::POS_Transaction_Number] ) , { } , query_filters ( ) )"
+    was_auto_generated: false
+  - name: Date
+    expr: "add_days ( [NewRetail_Sales_Fact_1::Timestamp] , diff_days ( add_days ( start_of_month ( today ( ) ) , - 1 ) , 12/31/2017 ) )"
+    was_auto_generated: false
+  - name: Frequency
+    expr: "unique count ( [NewRetail_Baskets_Fact_1::POS_Transaction_Number] ) / unique count ( [NewRetail_Customer_Dimension_1::Customer_Key] )"
+    was_auto_generated: false
+  - name: Frequency Regular
+    expr: "group_aggregate ( count ( [NewRetail_Baskets_Fact_1::POS_Transaction_Number] ) , query_groups ( ) + { [NewRetail_Customer_Dimension_1::Customer_Key] } , query_filters ( ) )"
+    was_auto_generated: false
+  - name: Gross Profit ($)
+    expr: "sum ( [NewRetail_Baskets_Fact_1::Sales_Dollar_Amount] ) - sum ( [NewRetail_Baskets_Fact_1::Cost_Dollar_Amount] )"
+    was_auto_generated: false
+  - name: Gross Profit Margin (%)
+    expr: "( sum ( [NewRetail_Baskets_Fact_1::Sales_Dollar_Amount] ) - sum ( [NewRetail_Baskets_Fact_1::Cost_Dollar_Amount] ) ) / sum ( [NewRetail_Baskets_Fact_1::Sales_Dollar_Amount] )"
+    was_auto_generated: false
+  - name: Item Cost
+    expr: "group_aggregate ( sum ( [NewRetail_Baskets_Fact_1::Cost_Dollar_Amount] ) / sum ( [NewRetail_Baskets_Fact_1::Sales_Quantity] ) , query_groups ( ) , query_filters ( ) )"
+    was_auto_generated: false
+  - name: Item Price
+    expr: "group_aggregate ( sum ( [NewRetail_Baskets_Fact_1::Sales_Dollar_Amount] ) / sum ( [NewRetail_Baskets_Fact_1::Sales_Quantity] ) , query_groups ( ) , query_filters ( ) )"
+    was_auto_generated: false
+  - name: Number of Customers
+    expr: "unique count ( [Customer ID] )"
+    was_auto_generated: false
+  - name: Customer ID
+    expr: "to_integer ( [NewRetail_Customer_Dimension_1::Customer_Key] ) + 100000"
+    was_auto_generated: false
+  - name: Number of Departments
+    expr: "unique count ( [NewRetail_Product_Dimension_1::Department_Key] )"
+    was_auto_generated: false
+  - name: Number of Products
+    expr: "unique count ( [NewRetail_Product_Dimension_1::Product] )"
+    was_auto_generated: false
+  - name: Number of Transactions
+    expr: "unique count ( [Transaction ID] )"
+    was_auto_generated: false
+  - name: Renovation Status
+    expr: "if ( [NewRetail_Store_Dimension_1::Store_Type] = \"small\" ) then 'renovated' else 'orginal build'"
+    was_auto_generated: false
+  - name: Transaction ID
+    expr: "to_integer ( [NewRetail_Baskets_Fact_1::POS_Transaction_Number] ) + 100000"
+    was_auto_generated: false
+  worksheet_columns:
+  - name: Customer Name
+    column_id: NewRetail_Customer_Dimension_1::Customer_Name
+    properties:
+      column_type: ATTRIBUTE
+      search_iq_preferred: true
+  - name: Customer Region
+    column_id: NewRetail_Customer_Dimension_1::Customer_Region
+    properties:
+      column_type: ATTRIBUTE
+      search_iq_preferred: true
+  - name: Diet Type
+    column_id: NewRetail_Product_Diet_Dimension_1::Diet_Type
+    properties:
+      column_type: ATTRIBUTE
+  - name: Category
+    column_id: NewRetail_Product_Dimension_1::Category
+    properties:
+      column_type: ATTRIBUTE
+      search_iq_preferred: true
+  - name: Brand
+    column_id: NewRetail_Product_Dimension_1::Brand
+    properties:
+      column_type: ATTRIBUTE
+  - name: Product
+    column_id: NewRetail_Product_Dimension_1::Product
+    properties:
+      column_type: ATTRIBUTE
+      synonyms:
+      - Item
+      search_iq_preferred: true
+  - name: Product Full Name
+    column_id: NewRetail_Product_Dimension_1::Product_Name
+    properties:
+      column_type: ATTRIBUTE
+      synonyms:
+      - Item Name
+      search_iq_preferred: true
+  - name: Department
+    column_id: NewRetail_Product_Dimension_1::Department_Key
+    properties:
+      column_type: ATTRIBUTE
+      search_iq_preferred: true
+  - name: Promotion ID
+    column_id: NewRetail_Promotion_Dimension_1::Promotion_Key
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+  - name: Promotion Discount
+    column_id: NewRetail_Promotion_Dimension_1::Discount
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      currency_type:
+        iso_code: USD
+  - name: Promotion Region
+    column_id: NewRetail_Promotion_Dimension_1::Region
+    properties:
+      column_type: ATTRIBUTE
+  - name: Store Name
+    column_id: NewRetail_Store_Dimension_1::Store_Name
+    properties:
+      column_type: ATTRIBUTE
+      search_iq_preferred: true
+  - name: Store State
+    column_id: NewRetail_Store_Dimension_1::Store_State
+    properties:
+      column_type: ATTRIBUTE
+      geo_config:
+        region_name:
+          country: UNITED STATES
+          region_name: state
+      search_iq_preferred: true
+  - name: Store Region
+    column_id: NewRetail_Store_Dimension_1::Store_Region
+    properties:
+      column_type: ATTRIBUTE
+      search_iq_preferred: true
+  - name: Store Zip Code
+    column_id: NewRetail_Store_Dimension_1::Store_Zip_Code
+    properties:
+      column_type: ATTRIBUTE
+      geo_config:
+        region_name:
+          country: UNITED STATES
+          region_name: zip code
+      search_iq_preferred: true
+  - name: Store County
+    column_id: NewRetail_Store_Dimension_1::Store_County
+    properties:
+      column_type: ATTRIBUTE
+      geo_config:
+        region_name:
+          country: UNITED STATES
+          region_name: county
+  - name: Store Type
+    column_id: NewRetail_Store_Dimension_1::Store_Type
+    properties:
+      column_type: ATTRIBUTE
+  - name: Store Selling Square Footage
+    column_id: NewRetail_Store_Dimension_1::Selling_Square_Footage
+    properties:
+      column_type: MEASURE
+      aggregation: AVERAGE
+  - name: Store Total Square Footage
+    column_id: NewRetail_Store_Dimension_1::Total_Square_Footage
+    properties:
+      column_type: MEASURE
+      aggregation: AVERAGE
+  - name: Quantity
+    column_id: NewRetail_Baskets_Fact_1::Sales_Quantity
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+  - name: Sales
+    column_id: NewRetail_Baskets_Fact_1::Sales_Dollar_Amount
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      synonyms:
+      - Revenue
+      currency_type:
+        iso_code: USD
+      search_iq_preferred: true
+  - name: Cost
+    column_id: NewRetail_Baskets_Fact_1::Cost_Dollar_Amount
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      currency_type:
+        iso_code: USD
+  - name: Date
+    formula_id: Date
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+      calendar: calendar
+      search_iq_preferred: true
+  - name: Item Price
+    formula_id: Item Price
+    properties:
+      column_type: MEASURE
+      aggregation: AVERAGE
+      index_type: DONT_INDEX
+  - name: Item Cost
+    formula_id: Item Cost
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+  - name: Transaction ID
+    formula_id: Transaction ID
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+      spotiq_preference: EXCLUDE
+  - name: Frequency
+    formula_id: Frequency
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+  - name: Frequency Regular
+    formula_id: Frequency Regular
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+  - name: Age Group
+    formula_id: Age Group
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+      search_iq_preferred: true
+  - name: Basket Contents
+    formula_id: Basket Contents
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+  - name: Gross Profit (%)
+    formula_id: Gross Profit Margin (%)
+    properties:
+      column_type: MEASURE
+      aggregation: AVERAGE
+      index_type: DONT_INDEX
+      synonyms:
+      - Profit (%)
+      - Margin (%)
+      - Gross Margin (%)
+      format_pattern: '###.##%'
+      search_iq_preferred: true
+  - name: Gross Profit ($)
+    formula_id: Gross Profit ($)
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      synonyms:
+      - Profit ($)
+      - Margin ($)
+      currency_type:
+        iso_code: USD
+  - name: Average Ticket Size
+    formula_id: Average Ticket Size
+    properties:
+      column_type: MEASURE
+      aggregation: AVERAGE
+      index_type: DONT_INDEX
+      currency_type:
+        iso_code: USD
+  - name: Average Frequency
+    formula_id: Average Frequency
+    properties:
+      column_type: MEASURE
+      aggregation: AVERAGE
+      index_type: DONT_INDEX
+  - name: Average Basket Size
+    formula_id: Average Basket Size
+    properties:
+      column_type: MEASURE
+      aggregation: AVERAGE
+      index_type: DONT_INDEX
+      search_iq_preferred: true
+  - name: Customer ID
+    formula_id: Customer ID
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+  - name: Number of Transactions
+    formula_id: Number of Transactions
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      synonyms:
+      - How Many Transactions
+  - name: Number of Customers
+    formula_id: Number of Customers
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      synonyms:
+      - How Many Customers
+  - name: Number of Departments
+    formula_id: Number of Departments
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      synonyms:
+      - How Many Departments
+  - name: Number of Products
+    formula_id: Number of Products
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      synonyms:
+      - How Many Products
+  - name: Renovation Status
+    formula_id: Renovation Status
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+      synonyms:
+      - Remodeling Status
+      - Redecoration Status
+      synonym_type: AUTO_GENERATED
+  properties:
+    is_bypass_rls: false
+    join_progressive: true

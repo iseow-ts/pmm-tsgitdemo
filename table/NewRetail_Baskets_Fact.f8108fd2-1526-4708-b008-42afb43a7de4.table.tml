@@ -1,0 +1,111 @@
+guid: f8108fd2-1526-4708-b008-42afb43a7de4
+table:
+  name: NewRetail_Baskets_Fact
+  db: PMMDB
+  schema: NEWRETAIL
+  db_table: NewRetail_Baskets_Fact
+  connection:
+    name: NewRetail_Snowflake
+    fqn: ce2a3f15-ca2d-4bd1-8d53-ca60c85ee776
+  columns:
+  - name: Basket_Key
+    db_column_name: Basket_Key
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: POS_Transaction_Number
+    db_column_name: POS_Transaction_Number
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: Product_Key
+    db_column_name: Product_Key
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: Product_Cost_Key
+    db_column_name: Product_Cost_Key
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: Sales_Quantity
+    db_column_name: Sales_Quantity
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+    db_column_properties:
+      data_type: INT64
+  - name: Sales_Dollar_Amount
+    db_column_name: Sales_Dollar_Amount
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+    db_column_properties:
+      data_type: DOUBLE
+  - name: Cost_Dollar_Amount
+    db_column_name: Cost_Dollar_Amount
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+    db_column_properties:
+      data_type: DOUBLE
+  - name: Gross_Profit_Dollar_Amount
+    db_column_name: Gross_Profit_Dollar_Amount
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+    db_column_properties:
+      data_type: DOUBLE
+  - name: Promotion_Key
+    db_column_name: Promotion_Key
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: Diet_Key
+    db_column_name: Diet_Key
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  joins_with:
+  - name: Diet_Key - Diet_Key
+    destination:
+      name: NewRetail_Product_Diet_Dimension
+      fqn: d4ce9796-e14f-443b-8bf0-ff3204f092e6
+    "on": "[NewRetail_Baskets_Fact::Diet_Key] = [NewRetail_Product_Diet_Dimension::Diet_Key]"
+    type: INNER
+  - name: FK_BASKETFACT_TO_SALESFACT
+    destination:
+      name: NewRetail_Sales_Fact
+      fqn: fef8ccd3-fec6-4f30-b0ce-5c8d662e05a5
+    "on": "[NewRetail_Baskets_Fact::POS_Transaction_Number] = [NewRetail_Sales_Fact::POS_Transaction_Number]"
+    type: INNER
+  - name: POS_Transaction_Number - POS_Transaction_Number
+    destination:
+      name: NewRetail_Sales_Fact
+      fqn: fef8ccd3-fec6-4f30-b0ce-5c8d662e05a5
+    "on": "([NewRetail_Baskets_Fact::POS_Transaction_Number] = [NewRetail_Sales_Fact::POS_Transaction_Number])"
+    type: INNER
+  - name: Product_Cost_Key - Product_Cost_Key
+    destination:
+      name: NewRetail_Product_Cost_Dimension
+      fqn: e7f31c4b-7f91-4453-a811-f8a763058e85
+    "on": "[NewRetail_Baskets_Fact::Product_Cost_Key] = [NewRetail_Product_Cost_Dimension::Product_Cost_Key]"
+    type: INNER
+  - name: Product_Key - Product_Key
+    destination:
+      name: NewRetail_Product_Dimension
+      fqn: 6d4f03e1-f8a5-4409-b7d8-53c7a52283ec
+    "on": "[NewRetail_Baskets_Fact::Product_Key] = [NewRetail_Product_Dimension::Product_Key]"
+    type: INNER
+  - name: Promotion_Key - Promotion_Key
+    destination:
+      name: NewRetail_Promotion_Dimension
+      fqn: 7288f4d0-9f8f-4ea4-afb7-eb6b26b8149d
+    "on": "[NewRetail_Baskets_Fact::Promotion_Key] = [NewRetail_Promotion_Dimension::Promotion_Key]"
+    type: INNER
