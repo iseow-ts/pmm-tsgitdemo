@@ -271,10 +271,6 @@ liveboard:
         client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"e1af31b8-4028-418d-8aa4-39ec3f67c993\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Sales\"],\"isOpposite\": false}},{\"id\": \"a1ab08f5-28cc-42f3-8c13-483bb5769619\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Product Type\",\"Warehouse\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Total Sales\",\"color\": \"#FF8142\"},{\"serieName\": \"bags\",\"color\": \"#704ec4\"},{\"serieName\": \"dresses\",\"color\": \"#a381f7\"},{\"serieName\": \"headwear\",\"color\": \"#8c62f5\"},{\"serieName\": \"jackets\",\"color\": \"#049160\"},{\"serieName\": \"jeans\",\"color\": \"#56D3A8\"},{\"serieName\": \"pants\",\"color\": \"#06BF7F\"},{\"serieName\": \"shirts\",\"color\": \"#BF982A\"},{\"serieName\": \"shorts\",\"color\": \"#FCD977\"},{\"serieName\": \"skirts\",\"color\": \"#FCC838\"},{\"serieName\": \"socks\",\"color\": \"#369FAA\"},{\"serieName\": \"sweaters\",\"color\": \"#82DFE9\"},{\"serieName\": \"sweatshirts\",\"color\": \"#48D1E0\"},{\"serieName\": \"swimwear\",\"color\": \"#2359B6\"},{\"serieName\": \"underwear\",\"color\": \"#71A1F4\"},{\"serieName\": \"vests\",\"color\": \"#2E75F0\"}]}"
       display_mode: CHART_MODE
     viz_guid: 3348fd0d-a2b5-42c4-ad91-14046f771f62
-  - id: Viz_8
-    viz_guid: 6792b8dc-4b47-4d23-a051-e3dbd8a0fbcd
-    note_tile:
-      html_parsed_string: <p class="theme-module__editor-paragraph" dir="ltr"><span>Adding note</span></p>
   filters:
   - column:
     - Online Apparel::Warehouse
@@ -337,9 +333,4 @@ liveboard:
       x: 9
       "y": 7
       height: 7
-      width: 3
-    - visualization_id: Viz_8
-      x: 0
-      "y": 20
-      height: 4
       width: 3
