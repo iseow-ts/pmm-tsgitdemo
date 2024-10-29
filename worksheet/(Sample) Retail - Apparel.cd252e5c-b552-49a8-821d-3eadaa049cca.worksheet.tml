@@ -1,0 +1,125 @@
+guid: cd252e5c-b552-49a8-821d-3eadaa049cca
+worksheet:
+  name: (Sample) Retail - Apparel
+  tables:
+  - name: DIM_RETAPP_PRODUCTS
+    fqn: a633dccd-b449-46df-a0fc-92034d6858cb
+  - name: DIM_RETAPP_STORES
+    fqn: 7d174ef2-2482-4e61-9d6e-1e1d709d96b0
+  - name: FACT_RETAPP_SALES
+    fqn: 757f2434-66ef-43ad-9820-ba9008072155
+  joins:
+  - name: C_DIM_RETAPP_STORES
+    source: FACT_RETAPP_SALES
+    destination: DIM_RETAPP_STORES
+    type: INNER
+    is_one_to_one: false
+  - name: C_DIM_RETAPP_PRODUCTS
+    source: FACT_RETAPP_SALES
+    destination: DIM_RETAPP_PRODUCTS
+    type: INNER
+    is_one_to_one: false
+  table_paths:
+  - id: DIM_RETAPP_PRODUCTS_1
+    table: DIM_RETAPP_PRODUCTS
+    join_path:
+    - join:
+      - C_DIM_RETAPP_PRODUCTS
+  - id: DIM_RETAPP_STORES_1
+    table: DIM_RETAPP_STORES
+    join_path:
+    - join:
+      - C_DIM_RETAPP_STORES
+  - id: FACT_RETAPP_SALES_1
+    table: FACT_RETAPP_SALES
+  formulas:
+  - name: Date2
+    expr: "add_days ( [FACT_RETAPP_SALES_1::RECORDDATE] , diff_days ( today ( ) , 04/30/2020 ) )"
+    was_auto_generated: false
+  worksheet_columns:
+  - name: product
+    column_id: DIM_RETAPP_PRODUCTS_1::PRODUCTNAME
+    properties:
+      column_type: ATTRIBUTE
+  - name: store
+    column_id: DIM_RETAPP_STORES_1::STORENAME
+    properties:
+      column_type: ATTRIBUTE
+  - name: item type
+    column_id: DIM_RETAPP_PRODUCTS_1::PRODUCTTYPE
+    properties:
+      column_type: ATTRIBUTE
+  - name: city
+    column_id: DIM_RETAPP_STORES_1::CITY
+    properties:
+      column_type: ATTRIBUTE
+  - name: state
+    column_id: DIM_RETAPP_STORES_1::STATE
+    properties:
+      column_type: ATTRIBUTE
+      geo_config:
+        region_name:
+          country: UNITED STATES
+          region_name: state
+  - name: county
+    column_id: DIM_RETAPP_STORES_1::COUNTY
+    properties:
+      column_type: ATTRIBUTE
+      geo_config:
+        region_name:
+          country: UNITED STATES
+          region_name: county
+  - name: latitude
+    column_id: DIM_RETAPP_STORES_1::LATITUDE
+    properties:
+      column_type: ATTRIBUTE
+      geo_config:
+        latitude: true
+  - name: longitude
+    column_id: DIM_RETAPP_STORES_1::LONGITUDE
+    properties:
+      column_type: ATTRIBUTE
+      geo_config:
+        longitude: true
+  - name: region
+    column_id: DIM_RETAPP_STORES_1::REGION
+    properties:
+      column_type: ATTRIBUTE
+  - name: quantity purchased
+    column_id: FACT_RETAPP_SALES_1::QUANTITYPURCHASED
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+  - name: sales
+    column_id: FACT_RETAPP_SALES_1::SALES
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+  - name: SKU
+    column_id: DIM_RETAPP_PRODUCTS_1::PRODUCTID
+    properties:
+      column_type: ATTRIBUTE
+  - name: zip code
+    column_id: DIM_RETAPP_STORES_1::ZIPCODE
+    properties:
+      column_type: ATTRIBUTE
+      geo_config:
+        region_name:
+          country: UNITED STATES
+          region_name: zip code
+  - name: date
+    formula_id: Date2
+    properties:
+      column_type: ATTRIBUTE
+  properties:
+    is_bypass_rls: false
+    join_progressive: true
+  lesson_plans:
+  - lesson_id: 0
+    lesson_plan_string: "What were [sales] by [product]  [date].'this year' ?"
+  - lesson_id: 1
+    lesson_plan_string: "What were the [top] [sales] for [product] in the [date].'last quarter' ?"
+  - lesson_id: 2
+    lesson_plan_string: "What is the [quantity purchased] for [item type].'shirts' on a [date].'monthly' basis per [city] ?"
+  - lesson_id: 3
+    lesson_plan_string: "What were [sales] for [item type].'shirts' in [state].'california' [versus] [state].'arizona' [date].'last week' ?"

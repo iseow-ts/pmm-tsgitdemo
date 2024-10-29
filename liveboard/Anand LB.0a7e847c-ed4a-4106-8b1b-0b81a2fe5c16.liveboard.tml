@@ -1,0 +1,38 @@
+guid: 0a7e847c-ed4a-4106-8b1b-0b81a2fe5c16
+liveboard:
+  name: Anand LB
+  visualizations:
+  - id: Viz_1
+    answer:
+      name: Total sales by product
+      tables:
+      - id: (Sample) Retail - Apparel
+        name: (Sample) Retail - Apparel
+        fqn: cd252e5c-b552-49a8-821d-3eadaa049cca
+      search_query: "[product] sort by [sales] descending"
+      answer_columns:
+      - name: Total sales
+      - name: product
+      table:
+        table_columns:
+        - column_id: Total sales
+          show_headline: false
+        - column_id: product
+          show_headline: false
+        ordered_column_ids:
+        - product
+        - Total sales
+        client_state: ""
+      chart:
+        type: COLUMN
+        chart_columns:
+        - column_id: Total sales
+        - column_id: product
+        axis_configs:
+        - x:
+          - product
+          "y":
+          - Total sales
+        client_state: ""
+      display_mode: CHART_MODE
+    viz_guid: 8f66dfb1-08c9-4ffd-83a3-a42b4620074c
