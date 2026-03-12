@@ -1286,6 +1286,6 @@ liveboard:
     - object_id: Viz_15
       style_properties:
       - name: tile_brand_color
-        value: TBC_E
+        value: TBC_A
       - name: hide_tile_description
         value: "true"
