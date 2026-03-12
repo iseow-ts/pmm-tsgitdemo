@@ -1,0 +1,228 @@
+guid: 38399c50-02f1-4310-804b-214b81f25333
+model:
+  name: (Sample) Retail Apparel - Alt
+  description: A sample ThoughtSpot dataset. Analyze the sales performance of a brick-and-mortar retail apparel brand with stores nationwide. Easily identify regions, product lines, and SKUs that are impacting revenue trends.
+  model_tables:
+  - name: dim_retapp_products
+    fqn: 7fd39fdb-9dfe-4954-b5dd-9a5d846085b0
+  - name: fact_retapp_sales
+    fqn: 055fd813-be4d-4a08-969f-e0a89a7100b7
+    joins:
+    - with: dim_retapp_products
+      referencing_join: c_dim_retapp_products
+    - with: dim_retapp_stores
+      referencing_join: c_dim_retapp_stores
+  - name: dim_retapp_stores
+    fqn: 3f3ae98c-8e8d-4445-b8b5-f7b6e991763c
+  formulas:
+  - id: formula_Date
+    name: Date
+    expr: add_days ( [fact_retapp_sales::recorddate] , diff_days ( today ( ) , 04/30/2020 ) )
+  - id: formula_Number of Orders
+    name: Number of Orders
+    expr: count ( [fact_retapp_sales::salesid] )
+  columns:
+  - name: Product
+    description: Product name for the SKU
+    column_id: dim_retapp_products::productname
+    properties:
+      column_type: ATTRIBUTE
+      index_priority: 3.0
+      synonyms:
+      - Item
+      - Product Line
+      - Merchandise
+      - Product Name
+      synonym_type: USER_DEFINED
+      value_casing: UNKNOWN
+  - name: Date
+    description: Date of the sales transaction
+    formula_id: formula_Date
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+      index_priority: 5.0
+      synonyms:
+      - Sales Date
+      - Transaction Date
+      calendar: calendar
+      synonym_type: USER_DEFINED
+      value_casing: UNKNOWN
+  - name: Number of Orders
+    description: Total count of individual sales transactions
+    formula_id: formula_Number of Orders
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      synonyms:
+      - Total receipts
+      - Number of Transactions
+      synonym_type: USER_DEFINED
+  - name: Product Type
+    description: Product category of each item
+    column_id: dim_retapp_products::producttype
+    properties:
+      column_type: ATTRIBUTE
+      index_priority: 5.0
+      synonyms:
+      - Product Category
+      - Article type
+      - Line Category
+      - Item Grouping
+      synonym_type: USER_DEFINED
+      value_casing: UNKNOWN
+  - name: Store
+    description: Store name
+    column_id: dim_retapp_stores::storename
+    properties:
+      column_type: ATTRIBUTE
+      index_priority: 3.0
+      synonyms:
+      - Outlet
+      - Shop
+      - Location
+      synonym_type: USER_DEFINED
+      value_casing: UNKNOWN
+  - name: City
+    description: State of the store location
+    column_id: dim_retapp_stores::city
+    properties:
+      column_type: ATTRIBUTE
+      index_priority: 2.0
+      value_casing: UNKNOWN
+  - name: State
+    description: City of the store
+    column_id: dim_retapp_stores::state
+    properties:
+      column_type: ATTRIBUTE
+      geo_config:
+        region_name:
+          country: UNITED STATES
+          region_name: state
+      value_casing: UNKNOWN
+  - name: Zip Code
+    description: Zipcode of the store
+    column_id: dim_retapp_stores::zipcode
+    properties:
+      column_type: ATTRIBUTE
+      geo_config:
+        region_name:
+          country: UNITED STATES
+          region_name: zip code
+      spotiq_preference: EXCLUDE
+      value_casing: UNKNOWN
+  - name: County
+    description: County of the store
+    column_id: dim_retapp_stores::county
+    properties:
+      column_type: ATTRIBUTE
+      geo_config:
+        region_name:
+          country: UNITED STATES
+          region_name: county
+      value_casing: UNKNOWN
+  - name: Latitude
+    description: Coordinates of the store
+    column_id: dim_retapp_stores::latitude
+    properties:
+      column_type: ATTRIBUTE
+      synonyms:
+      - Latitudinal Coordinate
+      - Latitudinal Position
+      geo_config:
+        latitude: true
+      spotiq_preference: EXCLUDE
+      synonym_type: USER_DEFINED
+      value_casing: UNKNOWN
+  - name: Longitude
+    description: Coordinates of the store
+    column_id: dim_retapp_stores::longitude
+    properties:
+      column_type: ATTRIBUTE
+      synonyms:
+      - Longitudinal Coordinate
+      - Longitudinal Position
+      geo_config:
+        longitude: true
+      spotiq_preference: EXCLUDE
+      synonym_type: USER_DEFINED
+      value_casing: UNKNOWN
+  - name: Region
+    description: Region the store falls under
+    column_id: dim_retapp_stores::region
+    properties:
+      column_type: ATTRIBUTE
+      index_priority: 7.0
+      synonyms:
+      - Area
+      - Zone
+      - Territory
+      synonym_type: USER_DEFINED
+      value_casing: UNKNOWN
+  - name: Quantity Sold
+    description: Basket quantity of a particular product
+    column_id: fact_retapp_sales::quantitypurchased
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_priority: 5.0
+      synonyms:
+      - Units Sold
+      - Sold quantity
+      - Sold volume
+      - Units purchased
+      - Number of items sold
+      synonym_type: USER_DEFINED
+      value_casing: UNKNOWN
+  - name: Sales
+    description: Total revenue generated from sales transactions
+    column_id: fact_retapp_sales::sales
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_priority: 5.0
+      synonyms:
+      - Revenue
+      currency_type:
+        iso_code: USD
+      synonym_type: USER_DEFINED
+      value_casing: UNKNOWN
+  - name: SKU
+    description: Stock Keeping Unit
+    column_id: dim_retapp_products::productid
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+      synonyms:
+      - Stock Keeping Unit
+      - Stock Keeping Number
+      spotiq_preference: EXCLUDE
+      synonym_type: USER_DEFINED
+      value_casing: UNKNOWN
+  - name: Sales ID
+    description: Unique ID for each sales transaction
+    column_id: fact_retapp_sales::salesid
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+      synonyms:
+      - Transaction ID
+      - Sales ID
+      spotiq_preference: EXCLUDE
+      synonym_type: USER_DEFINED
+      value_casing: UNKNOWN
+  properties:
+    is_bypass_rls: false
+    join_progressive: true
+    spotter_config:
+      is_spotter_enabled: true
+  lesson_plans:
+  - lesson_id: 0
+    lesson_plan_string: What were [Quantity Sold] by [Product Type] in the [Date].'last 2 months' ?
+  - lesson_id: 1
+    lesson_plan_string: What were your [top] [Sales] per [Region] in [Date].'this year' ?
+  - lesson_id: 2
+    lesson_plan_string: What is the [Sales] of [Product Type].'jackets' per [Date].'day of week' by [Region] ?
+  - lesson_id: 3
+    lesson_plan_string: What were [Quantity Sold] for [Product].'yosemite jacket' in [Region].'west' [versus] [Region].'east' [Date].'last year' ?
