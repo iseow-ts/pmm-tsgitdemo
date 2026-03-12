@@ -877,55 +877,6 @@ liveboard:
     viz_guid: 13616856-551d-407d-a971-861d2d367c2f
     note_tile:
       html_parsed_string: ""
-  - id: Viz_23
-    answer:
-      name: Product breakdown across regions
-      description: across months this year
-      tables:
-      - id: (Sample) Retail - Apparel
-        name: (Sample) Retail - Apparel
-        fqn: cd252e5c-b552-49a8-821d-3eadaa049cca
-      search_query: "[quantity purchased] [region] [item type] [date].2025 [date].monthly"
-      answer_columns:
-      - name: Month(date)
-      - name: Total quantity purchased
-      - name: item type
-      - name: region
-      table:
-        table_columns:
-        - column_id: Month(date)
-          show_headline: false
-        - column_id: Total quantity purchased
-          show_headline: false
-        - column_id: item type
-          show_headline: false
-        - column_id: region
-          show_headline: false
-        ordered_column_ids:
-        - region
-        - item type
-        - Month(date)
-        - Total quantity purchased
-        client_state: ""
-        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
-      chart:
-        type: STACKED_COLUMN
-        chart_columns:
-        - column_id: Month(date)
-        - column_id: Total quantity purchased
-        - column_id: item type
-        - column_id: region
-        axis_configs:
-        - x:
-          - item type
-          "y":
-          - Total quantity purchased
-          color:
-          - region
-        client_state: ""
-        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {\"stackedAsPercentFormat\": {\"category\": \"PERCENTAGE\",\"percentageFormatConfig\": {\"decimals\": 2.0,\"removeTrailingZeroes\": false},\"isCategoryEditable\": false},\"customProps\": \"{\\\"tileType\\\":null,\\\"advancedProperties\\\":{\\\"tooltip\\\":{\\\"enabled\\\":true,\\\"borderWidth\\\":\\\"1\\\",\\\"opacity\\\":\\\"\\\",\\\"label\\\":{},\\\"value\\\":{}},\\\"regression\\\":{\\\"lineWidth\\\":\\\"\\\"},\\\"gridlines\\\":{\\\"xAxis\\\":{},\\\"yAxis\\\":{}},\\\"answerLevelSettings\\\":{\\\"chart\\\":{\\\"backgroundStyle\\\":null},\\\"plotArea\\\":{\\\"backgroundStyle\\\":null},\\\"borderColor\\\":\\\"\\\",\\\"borderWidth\\\":\\\"\\\",\\\"connectingLines\\\":false},\\\"stackLabelStyles\\\":{\\\"align\\\":\\\"center\\\",\\\"backgroundColor\\\":\\\"\\\",\\\"borderColor\\\":\\\"\\\",\\\"borderWidth\\\":\\\"1\\\",\\\"maxCharacters\\\":\\\"\\\",\\\"style\\\":{}}},\\\"showLabel\\\":true,\\\"showComparison\\\":true,\\\"showSparkline\\\":true,\\\"showAnalyseChangeCta\\\":true,\\\"showAnomalies\\\":null,\\\"customCompare\\\":\\\"PREV_AVAILABLE\\\"}\",\"pivotSummariesState\": {}},\"showStackedLabels\": true,\"allLabels\": false,\"kpiDisplayProperties\": {\"showChange\": true,\"showChangeAs\": \"PERCENT\",\"changeInterpretation\": \"UPWARD_IS_GOOD\"}},\"columnProperties\": [{\"columnId\": \"Month(date)\",\"columnProperty\": {\"dataLabels\": false,\"customProps\": \"{\\\"advancedProperties\\\":{\\\"dataLabels\\\":{\\\"align\\\":\\\"center\\\",\\\"backgroundColor\\\":\\\"\\\",\\\"borderColor\\\":\\\"\\\",\\\"borderWidth\\\":\\\"1\\\",\\\"filter\\\":null,\\\"maxCharacters\\\":\\\"\\\",\\\"style\\\":{\\\"isLinked\\\":false,\\\"linkedTo\\\":null}},\\\"enableMarkers\\\":null,\\\"lineStyle\\\":null,\\\"markerStyle\\\":null}}\",\"kpiColumnProperties\": {\"showAbbreviatedPreviousDate\": false,\"abbreviatedPreviousDate\": \"\",\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}},{\"columnId\": \"region\",\"columnProperty\": {\"dataLabels\": false,\"customProps\": \"{\\\"advancedProperties\\\":{\\\"dataLabels\\\":{\\\"align\\\":\\\"center\\\",\\\"backgroundColor\\\":\\\"\\\",\\\"borderColor\\\":\\\"\\\",\\\"borderWidth\\\":\\\"1\\\",\\\"filter\\\":null,\\\"maxCharacters\\\":\\\"\\\",\\\"style\\\":{\\\"isLinked\\\":false,\\\"linkedTo\\\":null}},\\\"enableMarkers\\\":null,\\\"lineStyle\\\":null,\\\"markerStyle\\\":null}}\",\"kpiColumnProperties\": {\"showAbbreviatedPreviousDate\": false,\"abbreviatedPreviousDate\": \"\",\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}},{\"columnId\": \"item type\",\"columnProperty\": {\"dataLabels\": false,\"customProps\": \"{\\\"advancedProperties\\\":{\\\"dataLabels\\\":{\\\"align\\\":\\\"center\\\",\\\"backgroundColor\\\":\\\"\\\",\\\"borderColor\\\":\\\"\\\",\\\"borderWidth\\\":\\\"1\\\",\\\"filter\\\":null,\\\"maxCharacters\\\":\\\"\\\",\\\"style\\\":{\\\"isLinked\\\":false,\\\"linkedTo\\\":null}},\\\"enableMarkers\\\":null,\\\"lineStyle\\\":null,\\\"markerStyle\\\":null}}\",\"kpiColumnProperties\": {\"showAbbreviatedPreviousDate\": false,\"abbreviatedPreviousDate\": \"\",\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}},{\"columnId\": \"Total quantity purchased\",\"columnProperty\": {\"dataLabels\": false,\"customProps\": \"{\\\"advancedProperties\\\":{\\\"dataLabels\\\":{\\\"align\\\":\\\"center\\\",\\\"backgroundColor\\\":\\\"\\\",\\\"borderColor\\\":\\\"\\\",\\\"borderWidth\\\":\\\"1\\\",\\\"filter\\\":null,\\\"maxCharacters\\\":\\\"\\\",\\\"style\\\":{\\\"isLinked\\\":false,\\\"linkedTo\\\":null}},\\\"enableMarkers\\\":null,\\\"lineStyle\\\":null,\\\"markerStyle\\\":null}}\",\"kpiColumnProperties\": {\"showAbbreviatedPreviousDate\": false,\"abbreviatedPreviousDate\": \"\",\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}}],\"axisProperties\": [{\"id\": \"f51660ab-6b4f-4eaa-87fb-ef18321226f6\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total quantity purchased\"],\"isOpposite\": false,\"customProps\": \"{\\\"advancedProperties\\\":{\\\"axisSettings\\\":{\\\"visible\\\":true,\\\"axisName\\\":{\\\"isLinked\\\":false,\\\"isAxisNameVisible\\\":true}},\\\"labels\\\":{\\\"isLinked\\\":false,\\\"enabled\\\":true,\\\"maxCharacters\\\":\\\"\\\"},\\\"ticks\\\":{\\\"showTicks\\\":false,\\\"tickWidth\\\":\\\"1\\\",\\\"tickLength\\\":\\\"5\\\",\\\"tickColor\\\":\\\"#5E5E5E\\\"}}}\"}},{\"id\": \"299825ae-83fe-4263-bf0a-29e3de65a93f\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"item type\"],\"customProps\": \"{\\\"advancedProperties\\\":{\\\"axisSettings\\\":{\\\"visible\\\":true,\\\"axisName\\\":{\\\"isLinked\\\":false,\\\"isAxisNameVisible\\\":true}},\\\"labels\\\":{\\\"isLinked\\\":false,\\\"enabled\\\":true,\\\"maxCharacters\\\":\\\"\\\"},\\\"ticks\\\":{\\\"showTicks\\\":false,\\\"tickWidth\\\":\\\"1\\\",\\\"tickLength\\\":\\\"5\\\",\\\"tickColor\\\":\\\"#5E5E5E\\\"}}}\"}}],\"systemSeriesColors\": [{\"serieName\": \"east, bags\",\"color\": \"#2E75F0\"},{\"serieName\": \"east, dresses\",\"color\": \"#48D1E0\"},{\"serieName\": \"east, headwear\",\"color\": \"#FCC838\"},{\"serieName\": \"east, jackets\",\"color\": \"#06BF7F\"},{\"serieName\": \"east, jeans\",\"color\": \"#8C62F5\"},{\"serieName\": \"east, pants\",\"color\": \"#FF8142\"},{\"serieName\": \"east, shirts\",\"color\": \"#ABC7F9\"},{\"serieName\": \"east, shorts\",\"color\": \"#B5ECF2\"},{\"serieName\": \"east, skirts\",\"color\": \"#FDE9AF\"},{\"serieName\": \"east, socks\",\"color\": \"#9BE5CB\"},{\"serieName\": \"east, sweaters\",\"color\": \"#D1C0FB\"},{\"serieName\": \"east, sweatshirts\",\"color\": \"#FFCCB3\"},{\"serieName\": \"east, swimwear\",\"color\": \"#2359B6\"},{\"serieName\": \"east, underwear\",\"color\": \"#369FAA\"},{\"serieName\": \"east, vests\",\"color\": \"#BF982A\"},{\"serieName\": \"midwest, bags\",\"color\": \"#049160\"},{\"serieName\": \"midwest, dresses\",\"color\": \"#6A4ABA\"},{\"serieName\": \"midwest, headwear\",\"color\": \"#C26232\"},{\"serieName\": \"midwest, jackets\",\"color\": \"#71A1F4\"},{\"serieName\": \"midwest, jeans\",\"color\": \"#82DFE9\"},{\"serieName\": \"midwest, pants\",\"color\": \"#FCD977\"},{\"serieName\": \"midwest, shirts\",\"color\": \"#56D3A8\"},{\"serieName\": \"midwest, shorts\",\"color\": \"#B094F8\"},{\"serieName\": \"midwest, skirts\",\"color\": \"#FFA97E\"},{\"serieName\": \"midwest, socks\",\"color\": \"#163772\"},{\"serieName\": \"midwest, sweaters\",\"color\": \"#22636B\"},{\"serieName\": \"midwest, sweatshirts\",\"color\": \"#785F1A\"},{\"serieName\": \"midwest, swimwear\",\"color\": \"#025B3C\"},{\"serieName\": \"midwest, underwear\",\"color\": \"#422E75\"},{\"serieName\": \"midwest, vests\",\"color\": \"#7A3D1F\"},{\"serieName\": \"south, bags\",\"color\": \"#2E75F0\"},{\"serieName\": \"south, dresses\",\"color\": \"#48D1E0\"},{\"serieName\": \"south, headwear\",\"color\": \"#FCC838\"},{\"serieName\": \"south, jackets\",\"color\": \"#06BF7F\"},{\"serieName\": \"south, jeans\",\"color\": \"#8C62F5\"},{\"serieName\": \"south, pants\",\"color\": \"#FF8142\"},{\"serieName\": \"south, shirts\",\"color\": \"#ABC7F9\"},{\"serieName\": \"south, shorts\",\"color\": \"#B5ECF2\"},{\"serieName\": \"south, skirts\",\"color\": \"#FDE9AF\"},{\"serieName\": \"south, socks\",\"color\": \"#9BE5CB\"},{\"serieName\": \"south, sweaters\",\"color\": \"#D1C0FB\"},{\"serieName\": \"south, sweatshirts\",\"color\": \"#FFCCB3\"},{\"serieName\": \"south, swimwear\",\"color\": \"#2359B6\"},{\"serieName\": \"south, underwear\",\"color\": \"#369FAA\"},{\"serieName\": \"south, vests\",\"color\": \"#BF982A\"},{\"serieName\": \"southwest, bags\",\"color\": \"#049160\"},{\"serieName\": \"southwest, dresses\",\"color\": \"#6A4ABA\"},{\"serieName\": \"southwest, headwear\",\"color\": \"#C26232\"},{\"serieName\": \"southwest, jackets\",\"color\": \"#71A1F4\"},{\"serieName\": \"southwest, jeans\",\"color\": \"#82DFE9\"},{\"serieName\": \"southwest, pants\",\"color\": \"#FCD977\"},{\"serieName\": \"southwest, shirts\",\"color\": \"#56D3A8\"},{\"serieName\": \"southwest, shorts\",\"color\": \"#B094F8\"},{\"serieName\": \"southwest, skirts\",\"color\": \"#FFA97E\"},{\"serieName\": \"southwest, socks\",\"color\": \"#163772\"},{\"serieName\": \"southwest, sweaters\",\"color\": \"#22636B\"},{\"serieName\": \"southwest, sweatshirts\",\"color\": \"#785F1A\"},{\"serieName\": \"southwest, swimwear\",\"color\": \"#025B3C\"},{\"serieName\": \"southwest, underwear\",\"color\": \"#422E75\"},{\"serieName\": \"southwest, vests\",\"color\": \"#7A3D1F\"},{\"serieName\": \"west, bags\",\"color\": \"#2E75F0\"},{\"serieName\": \"west, dresses\",\"color\": \"#48D1E0\"},{\"serieName\": \"west, headwear\",\"color\": \"#FCC838\"},{\"serieName\": \"west, jackets\",\"color\": \"#06BF7F\"},{\"serieName\": \"west, jeans\",\"color\": \"#8C62F5\"},{\"serieName\": \"west, pants\",\"color\": \"#FF8142\"},{\"serieName\": \"west, shirts\",\"color\": \"#ABC7F9\"},{\"serieName\": \"west, shorts\",\"color\": \"#B5ECF2\"},{\"serieName\": \"west, skirts\",\"color\": \"#FDE9AF\"},{\"serieName\": \"west, socks\",\"color\": \"#9BE5CB\"},{\"serieName\": \"west, sweaters\",\"color\": \"#D1C0FB\"},{\"serieName\": \"west, sweatshirts\",\"color\": \"#FFCCB3\"},{\"serieName\": \"west, swimwear\",\"color\": \"#2359B6\"},{\"serieName\": \"west, underwear\",\"color\": \"#369FAA\"},{\"serieName\": \"west, vests\",\"color\": \"#BF982A\"},{\"serieName\": \"east\",\"color\": \"#2E75F0\"},{\"serieName\": \"midwest\",\"color\": \"#48D1E0\"},{\"serieName\": \"south\",\"color\": \"#FCC838\"},{\"serieName\": \"southwest\",\"color\": \"#06BF7F\"},{\"serieName\": \"west\",\"color\": \"#8C62F5\"}]}"
-      display_mode: CHART_MODE
-    viz_guid: d69280eb-b44b-4877-bbd7-e871871b132a
   groups:
   - id: Group_1
     name: Sales Overview
@@ -1034,11 +985,6 @@ liveboard:
         "y": 20
         height: 5
         width: 6
-      - visualization_id: Viz_23
-        x: 0
-        "y": 25
-        height: 4
-        width: 12
       id: ed3fe830-d93e-49e5-a0ce-fe624cfc316b
       group_layouts:
       - id: Group_1
